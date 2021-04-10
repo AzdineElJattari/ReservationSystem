@@ -146,9 +146,12 @@
     <Content Include="fonts\icons.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\affordable.png" />
     <Content Include="Images\barber-pole %281%29.png" />
     <Content Include="Images\home.png" />
     <Content Include="Images\pricelist.png" />
+    <Content Include="Images\quality.png" />
+    <Content Include="Images\schedule.png" />
     <Content Include="Images\search.png" />
     <Content Include="Images\shop.png" />
     <Content Include="Images\shopping-cart.png" />

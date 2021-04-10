@@ -22,7 +22,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body style="overflow: visible">
+<body>
     @RenderBody()
     <div class="container">
         <div class="row">
@@ -90,6 +90,60 @@
                     </div>
                 </div>
             </nav>
+        </div>
+    </div>
+    <div class="row row-section">
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="container border-end border-warning">
+                        <div class="d-flex flex-column text-center justify-content-center">
+                            <div class="shadow p-2 mb-5 bg-body rounded w-75 ms-5">
+                                    <p class="card-head-title text-decoration-underline">Kwaliteit</p>
+                                    <img alt="quality-image" src="~/Images/quality.png" width="45" height="45" class="img-responsive" />
+                            </div>
+                            <div class="shadow p-2 mb-5 bg-body rounded w-75 ms-5">
+                                <p class="card-head-title text-decoration-underline">Voordelig</p>
+                                <img alt="quality-image" src="~/Images/affordable.png" width="45" height="45" class="img-responsive" />
+                            </div>
+                            <div class="shadow p-2 mb-5 bg-body rounded w-75 ms-5">
+                                <p class="card-head-title text-decoration-underline">Snel bestellen</p>
+                                <img alt="quality-image" src="~/Images/schedule.png" width="45" height="45" class="img-responsive" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <section class="sec sec-img">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://wallpaperaccess.com/full/1936423.jpg" alt="Barbershop Wallpapers - Top Free Barbershop Backgrounds - WallpaperAccess/>" class="d-block w-100 carousel-image">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://www.wallpapertip.com/wmimgs/27-276995_wallpaper-barbershop.jpg" class="d-block w-100 carousel-image" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://www.wallpapertip.com/wmimgs/95-956819_barber.jpg" class="d-block w-100 carousel-image" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </section>
+                </div>
+            </div>
         </div>
     </div>
     <footer class="footer">
