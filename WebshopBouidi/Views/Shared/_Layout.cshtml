@@ -9,8 +9,8 @@
     <meta name='designer' content='Azdine El Jattari' />
     <meta name='contact' content='azdine.eljattari@hotmail.com' />
     <meta name='copyright' content='Copyright (c) 2021 AzdineWebdeign &amp; development. All rights reserved.' />
-    <link rel="shortcut icon" href="https://icons.iconarchive.com/icons/google/noto-emoji-travel-places/256/42527-barber-pole-icon.png">
-    <title>Kapper Bouidi</title>
+    <link rel="shortcut icon" href="~/Images/favicon.png">
+    <title>Bouidi</title>
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/nice-select.css">
@@ -32,35 +32,38 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <a class="navbar-brand mobile-navbar-brand" href="#"><img class="img-responsive" alt="barber-logo" src="~/Images/barber-pole (1).png" /></a>
+                        <a class="navbar-brand mobile-navbar-brand" href="#"><img class="img-responsive" alt="barber-logo" src="~/Images/logo.png" width="120" height="120" style="padding-top: 10px;" /></a>
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
+                            <li class="nav-item pt-md-2">
                                 <a class="nav-link active home" aria-current="page" href="#">Homepagina</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link pricelist" href="#">Prijslijst</a>
+                            <li class="nav-item pt-md-2">
+                                <a class="nav-link pricelist" href="#">Winkel</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link shop" href="#" tabindex="-1" aria-disabled="true">Winkel</a>
+                            <li class="nav-item pt-md-2">
+                                <a class="nav-link pricelist" href="#">Afspraak maken</a>
+                            </li>
+                            <li class="nav-item pt-md-2">
+                                <a class="nav-link shop" href="#" tabindex="-1" aria-disabled="true">Contact</a>
                             </li>
                         </ul>
                         <div class="container-nb">
                             <div class="row">
-                                <div class="col-8">
+                                <div class="col-8 pt-md-2 pe-md-5">
                                     <form class="d-flex mr-2">
                                         <input class="form-control me-2" type="search" placeholder="Zoek" aria-label="Zoek">
                                         <button class="btn btn-outline-success btn-search" type="submit">
-                                            <img alt="search" src="~/Images/search.png" height="20" width="20" />
+                                            <img alt="search" src="~/Images/searchglass.png" height="20" width="20" />
                                         </button>
                                     </form>
                                 </div>
-                                <div class="col-2 ">
+                                <div class="col-2 pt-md-2">
                                     <!-- Button trigger modal -->
                                     <span data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                         <button class="btn btn-outline-success btn-search" id="btn-shopping-cart" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Winkelkar">
-                                            <img alt="shopping-cart" src="~/Images/shopping-cart.png" height="20" width="20" />
+                                            <img alt="shopping-cart" src="~/Images/shoppingcart.png" height="20" width="20"/>
                                         </button>
-                                     </span>
+                                    </span>
                                     <!-- Modal -->
                                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                         <div class="modal-dialog">
@@ -80,9 +83,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-2">
+                                <div class="col-2 pt-md-2">
                                     <button class="btn btn-outline-success btn-search" id="btn-user-profile" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profiel">
-                                        <img alt="shopping-cart" src="~/Images/user.png" height="20" width="20" />
+                                        <img alt="shopping-cart" src="~/Images/profile.png" height="20" width="20" />
                                     </button>
                                 </div>
                             </div>
@@ -93,22 +96,22 @@
         </div>
     </div>
     <div class="row row-section">
-        <div class="container-fluid d-flex justify-content-center">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="container border-end border-warning">
-                        <div class="d-flex flex-column text-center justify-content-center">
-                            <div class="shadow p-2 mb-5 bg-body rounded w-75 ms-5">
-                                    <p class="card-head-title text-decoration-underline">Kwaliteit</p>
-                                    <img alt="quality-image" src="~/Images/quality.png" width="45" height="45" class="img-responsive" />
+                    <div class="container border-end border-dark">
+                        <div class="text-center">
+                            <div class="shadow p-2 mb-5 bg-body rounded w-75 ms-5 rounded-pill section-cards-rounded-pill" id="rounded-pill-quality-img">
+                                <p class="card-head-title text-decoration-underline">Gegarandeerde kwaliteit</p>
+                                <img alt="quality-image" src="~/Images/icons8-quality-static.png" width="45" height="45" class="img-responsive" id="quality-img" />
                             </div>
-                            <div class="shadow p-2 mb-5 bg-body rounded w-75 ms-5">
-                                <p class="card-head-title text-decoration-underline">Voordelig</p>
-                                <img alt="quality-image" src="~/Images/affordable.png" width="45" height="45" class="img-responsive" />
+                            <div class="shadow p-2 mb-5 bg-body rounded w-75 ms-5 rounded-pill section-cards-rounded-pill" id="rounded-pill-cheap-img">
+                                <p class="card-head-title text-decoration-underline">Voordelig in prijs</p>
+                                <img alt="quality-image" src="~/Images/icons8-cheap-static.png" width="45" height="45" class="img-responsive" id="cheap-img" />
                             </div>
-                            <div class="shadow p-2 mb-5 bg-body rounded w-75 ms-5">
-                                <p class="card-head-title text-decoration-underline">Snel bestellen</p>
-                                <img alt="quality-image" src="~/Images/schedule.png" width="45" height="45" class="img-responsive" />
+                            <div class="shadow p-2 mb-5 bg-body rounded w-75 ms-5 rounded-pill section-cards-rounded-pill" id="rounded-pill-schedule-img">
+                                <p class="card-head-title text-decoration-underline">Snelle service</p>
+                                <img alt="quality-image" src="~/Images/icons8-schedule-static.png" width="45" height="45" class="img-responsive" id="schedule-img" />
                             </div>
                         </div>
                     </div>
@@ -134,12 +137,60 @@
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
+                                <span class="visually-hidden">Vorige</span>
                             </button>
                             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
+                                <span class="visually-hidden">Volgende</span>
                             </button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-section-two" style="margin-top: 8%; margin-bottom: 8%; box-shadow: 0 -5px 5px -3px #333, 0 -5px 5px -3px #333, 0 5px 5px -1px #333">
+        <div class="container d-flex justify-content-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="sec sec-servicesbox-info d-flex justify-content-center">
+                        <div class="partial-border text-left">
+                            <p class="head-title-servicesbox">Services</p>
+                            <p class="body-servicesbox">
+                                Het hout aan de muren, het eigenzinnige antiek en de geur van pure haarproducten versmelten tot een heerlijke cocktail.
+                                In wezen is kapper Bouidi er voor mannen die de voorkeur geven aan een no-nonsense omgeving boven de salon.
+                                Maar tegelijkertijd verwelkomen we ook mooie en modieuze kinderen met open armen voor een professioneel kapsel.
+                                Kom binnen, maak het uzelf gemakkelijk en laat u overweldigen door de magie van onze kappers.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-section-three" style="margin-bottom: 8%; box-shadow: 0 -5px 5px -3px #333, 0 -5px 5px -3px #333, 0 5px 5px -1px #333">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="sec sec-pricelist d-flex justify-content-between">
+                        <div class="card shadow-lg" style="width: 18rem;">
+                            <img src="https://image.freepik.com/free-photo/barber-clips-handsome-kid-sides-with-scissors_99043-3118.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: black; font-family: 'Teko', sans-serif; font-size: 30px">Kinderen</h5>
+                                <p class="card-text" style="color: black; font-family: 'Roboto Condensed', sans-serif;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-theme">Maak afspraak</a>
+                            </div>
+                        </div>
+                        <div class="pt-md-5">
+                            <img alt="barber-chair-img" src="https://www.iconsdb.com/icons/preview/white/barbers-chair-xxl.png" />
+                        </div>
+                        <div class="card shadow-lg" style="width: 18rem;">
+                            <img src="https://www.kappers.nl/files/shares/content/Fotolia_96686953_Subscription_Monthly_M.jpg" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title" style="color: black; font-family: 'Teko', sans-serif; font-size: 30px;">Heren</h5>
+                                <p class="card-text" style="color: black; font-family: 'Roboto Condensed', sans-serif;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-theme">Maak afspraak</a>
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -152,6 +203,33 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            if ($('#rounded-pill-quality-img').mouseover(function () {
+                $("#quality-img").attr("src", "Images/icons8-quality.gif");
+            }))
+
+                if ($('#rounded-pill-quality-img').mouseleave(function () {
+                    $("#quality-img").attr("src", "Images/icons8-quality-static.png");
+                }))
+
+                    if ($('#rounded-pill-cheap-img').mouseover(function () {
+                        $("#cheap-img").attr("src", "Images/icons8-cheap.gif");
+                    }));
+
+            if ($('#rounded-pill-cheap-img').mouseleave(function () {
+                $("#cheap-img").attr("src", "Images/icons8-cheap-static.png");
+            }));
+
+            if ($('#rounded-pill-schedule-img').mouseover(function () {
+                $("#schedule-img").attr("src", "Images/icons8-schedule.gif");
+            }));
+
+            if ($('#rounded-pill-schedule-img').mouseleave(function () {
+                $("#schedule-img").attr("src", "Images/icons8-schedule-static.png");
+            }));
+        });
+    </script>
     <script>
         $(function () {
             $('[data-bs-toggle="tooltip"]').tooltip()
