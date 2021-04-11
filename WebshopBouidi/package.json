@@ -2,6 +2,8 @@
   "name": "myproject",
   "version": "1.0.0",
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.9.0"
+    "@fortawesome/fontawesome-free": "^5.9.0",
+    "animate.css": "^4.1.1",
+    "bootstrap-icons": "^1.4.1"
   }
 }
