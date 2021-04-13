@@ -16,9 +16,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link href="@Url.Content("~/Styles/Home.css")" rel="stylesheet" type="text/css" />
-    @RenderSection("Styles", false)
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Styles/Home.css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -33,23 +33,23 @@
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                         <a class="navbar-brand mobile-navbar-brand" href="#" data-aos="fade-down"><img class="img-responsive" alt="barber-logo" src="~/Images/logo.png" width="120" height="120" style="padding-top: 10px;" /></a>
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item pt-md-2">
+                            <li class="nav-item pt-md-2" data-aos="fade-down">
                                 <a class="nav-link active home" aria-current="page" href="#">Homepagina</a>
                             </li>
-                            <li class="nav-item pt-md-2">
+                            <li class="nav-item pt-md-2" data-aos="fade-down">
                                 <a class="nav-link pricelist" href="#">Winkel</a>
                             </li>
-                            <li class="nav-item pt-md-2">
+                            <li class="nav-item pt-md-2" data-aos="fade-down">
                                 <a class="nav-link pricelist" href="#">Afspraak maken</a>
                             </li>
-                            <li class="nav-item pt-md-2">
+                            <li class="nav-item pt-md-2" data-aos="fade-down">
                                 <a class="nav-link shop" href="#" tabindex="-1" aria-disabled="true">Contact</a>
                             </li>
                         </ul>
                         <div class="container-nb">
                             <div class="row">
                                 <div class="col-8 pt-md-2 pe-md-5">
-                                    <form class="d-flex mr-2">
+                                    <form class="d-flex mr-2" data-aos="fade-down">
                                         <input class="form-control me-2" type="search" placeholder="Zoek" aria-label="Zoek">
                                         <button class="btn btn-outline-success btn-search" type="submit">
                                             <img alt="search" src="~/Images/searchglass.png" height="20" width="20" />
@@ -59,7 +59,7 @@
                                 <div class="col-2 pt-md-2">
                                     <!-- Button trigger modal -->
                                     <span data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                        <button class="btn btn-outline-success btn-search" id="btn-shopping-cart" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Winkelkar">
+                                        <button class="btn btn-outline-success btn-search" data-aos="fade-down" id="btn-shopping-cart" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Winkelkar">
                                             <img alt="shopping-cart" src="~/Images/shoppingcart.png" height="20" width="20" />
                                         </button>
                                     </span>
@@ -83,7 +83,7 @@
                                     </div>
                                 </div>
                                 <div class="col-2 pt-md-2">
-                                    <button class="btn btn-outline-success btn-search" id="btn-user-profile" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profiel">
+                                    <button class="btn btn-outline-success btn-search" data-aos="fade-down" id="btn-user-profile" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profiel">
                                         <img alt="shopping-cart" src="~/Images/profile.png" height="20" width="20" />
                                     </button>
                                 </div>
@@ -98,19 +98,25 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="container border-end border-dark">
+                    <div class="container border-end border-dark mb-md-3">
                         <div class="text-center">
-                            <div class="shadow p-2 mb-5 bg-body rounded w-75 ms-5 rounded-pill section-cards-rounded-pill" data-aos="fade-right" data-aos-duration="1000" id="rounded-pill-quality-img">
-                                <p class="card-head-title text-decoration-underline">Gegarandeerde kwaliteit</p>
-                                <img alt="quality-image" src="~/Images/icons8-quality-static.png" width="45" height="45" class="img-responsive" id="quality-img" />
+                            <div class="card-wrapper mb-md-2 me-md-4" data-aos="fade-left" data-aos-duration="1000">
+                                <div class="sec-one-card shadow" id="rounded-pill-quality-img">
+                                    <p class="card-head-title">Gegarandeerde kwaliteit</p>
+                                    <img alt="quality-image" src="~/Images/icons8-quality-static.png" width="55" height="55" class="img-responsive" id="quality-img" />
+                                </div>
                             </div>
-                            <div class="shadow p-2 mb-5 bg-body rounded w-75 ms-5 rounded-pill section-cards-rounded-pill" data-aos="fade-left" data-aos-duration="1000" id="rounded-pill-cheap-img">
-                                <p class="card-head-title text-decoration-underline">Voordelig in prijs</p>
-                                <img alt="quality-image" src="~/Images/icons8-cheap-static.png" width="45" height="45" class="img-responsive" id="cheap-img" />
+                            <div class="card-wrapper mb-md-2 me-md-4" data-aos="fade-right" data-aos-duration="1000">
+                                <div class="sec-one-card shadow" id="rounded-pill-cheap-img">
+                                    <p class="card-head-title">Voordelig in prijs</p>
+                                    <img alt="quality-image" src="~/Images/icons8-cheap-static.png" width="55" height="55" class="img-responsive" id="cheap-img" />
+                                </div>
                             </div>
-                            <div class="shadow p-2 mb-5 bg-body rounded w-75 ms-5 rounded-pill section-cards-rounded-pill" data-aos="fade-right" data-aos-duration="1000" id="rounded-pill-schedule-img">
-                                <p class="card-head-title text-decoration-underline">Snelle service</p>
-                                <img alt="quality-image" src="~/Images/icons8-schedule-static.png" width="45" height="45" class="img-responsive" id="schedule-img" />
+                            <div class="card-wrapper mb-md-2 me-md-4" data-aos="fade-left" data-aos-duration="1000">
+                                <div class="sec-one-card shadow" id="rounded-pill-schedule-img">
+                                    <p class="card-head-title">Snelle service</p>
+                                    <img alt="quality-image" src="~/Images/icons8-schedule-static.png" width="55" height="55" class="img-responsive" id="schedule-img" />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -172,7 +178,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <section class="sec sec-pricelist d-flex justify-content-between">
-                        <div class="card shadow-lg" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" style="width: 18rem;">
+                        <div class="card shadow-lg border-dark" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" style="width: 18rem;">
                             <img src="https://image.freepik.com/free-photo/barber-clips-handsome-kid-sides-with-scissors_99043-3118.jpg" class="card-img-top">
                             <div class="card-body">
                                 <h5 class="card-title" style="color: black; font-family: 'Teko', sans-serif; font-size: 30px">Kinderen</h5>
@@ -186,7 +192,7 @@
                             <img class="mb-md-3" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000" src="~/Images/scissors.png" />
                             <img class="mb-md-3" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000" src="~/Images/shaving-razor.png" />
                         </div>
-                        <div class="card shadow-lg" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" style="width: 18rem;">
+                        <div class="card shadow-lg border-dark" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" style="width: 18rem;">
                             <img src="https://www.kappers.nl/files/shares/content/Fotolia_96686953_Subscription_Monthly_M.jpg" class="card-img-top">
                             <div class="card-body">
                                 <h5 class="card-title" style="color: black; font-family: 'Teko', sans-serif; font-size: 30px;">Heren</h5>
@@ -199,27 +205,27 @@
             </div>
         </div>
     </div>
-    <div class="container-section-four" style="margin-bottom: 8%;">
+    <div class="container-section-four">
         <div class="container d-flex flex-column text-center">
             <div class="row">
                 <div class="col-md-12">
                     <section>
-                        <p data-aos="zoom-in-up">We geven graag <span style="text-decoration:underline; color: orange">advies op maat</span>, want er loopt geen tweede jij rond op deze wereld. Bel ons of snel & gemakkelijk online een afspraak!</p>
+                        <p style="font-family: 'Roboto Condensed', sans-serif;" data-aos="zoom-in-up">We geven graag <span style="text-decoration: underline; color: orange; font-family: 'Roboto Condensed', sans-serif;">advies op maat</span>, want er loopt geen tweede jij rond op deze wereld. Bel ons of maak snel & gemakkelijk online een afspraak!</p>
                         <span>
-                            @Html.ActionLink("#Stijladvies", "", "", new { }, new { @class = "stijladvies-link", data_aos = "flip-left", @style = "color: orange;" })
+                            @Html.ActionLink("#Stijladvies", "", "", new { }, new { @class = "stijladvies-link", data_aos = "flip-left", @style = "color: orange; font-family: 'Roboto Condensed', sans-serif;" })
                             <i class="fas fa-arrow-right" style="color: orange"></i>
                         </span>
                         <div>
-                            <p class="head-title-servicesbox" style="color: black; margin-top: 5%;">Producten</p>
-                            <p class="body-servicesbox" style="color: black;">
+                            <p class="head-title-servicesbox" data-aos="zoom-in-up" style="color: black; margin-top: 5%;">Producten</p>
+                            <p class="body-servicesbox" data-aos="zoom-in-up" style="color: black;">
                                 Onze klanten verdienen niets minder dan de beste producten voor haar- en baardverzorging.
                                 Neem bij uw volgend bezoek ook een kijkje naar de scheermessen van ons eigen huismerk!
                             </p>
                         </div>
                         <div class="container d-flex justify-content-between" style="margin-top: 5%;">
-                            <img src="https://logos-world.net/wp-content/uploads/2020/04/LOreal-Emblem.png" style="width: 20%;" />
-                            <img src="https://www.henkel.nl/resource/image/214622/4x3/1000/750/d40312ad1a0db143ce427a6f432aaf32/wC/schwarzkopf-corporate.png" style="width: 20%;" />
-                            <img src="https://hairstuff.be/wp-content/uploads/2020/04/wahl_logo_bw.png" style="width: 25%;" />
+                            <img data-aos="zoom-in-up" src="https://logos-world.net/wp-content/uploads/2020/04/LOreal-Emblem.png" style="width: 20%;" />
+                            <img data-aos="zoom-in-up" src="https://www.henkel.nl/resource/image/214622/4x3/1000/750/d40312ad1a0db143ce427a6f432aaf32/wC/schwarzkopf-corporate.png" style="width: 20%;" />
+                            <img data-aos="zoom-in-up" src="https://seeklogo.com/images/W/wahl-logo-5261E76354-seeklogo.com.png" style="width: 19%;" />
 
                         </div>
                     </section>
@@ -227,15 +233,61 @@
             </div>
         </div>
     </div>
-    <footer class="footer">
-        <div class="container">
-            <p class="text-muted">Place sticky footer content here.</p>
-        </div>
-    </footer>
+    <div>
+        <footer class="footer-59391">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-md-4">
+                        <div class="site-logo">
+                            <a class="navbar-brand mobile-navbar-brand" href="#" data-aos="fade-down"><img class="img-responsive" alt="barber-logo" src="~/Images/logo.png" width="120" height="120" style="padding-top: 10px;" /></a>
+                        </div>
+                    </div>
+                    <div class="col-md-8 text-md-right">
+                        <ul class="list-unstyled social-icons">
+                            <li data-aos="fade-down"><a href="#" class="fb"><span class="fa fa-facebook"></span></a></li>
+                            <li data-aos="fade-down"><a href="#" class="in"><span class="fa fa-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col-md-6 ">
+                        <ul class="nav-links list-unstyled nav-left">
+                            <li data-aos="fade-down"><a href="#">Privacy</a></li>
+                            <li data-aos="fade-down"><a href="#">Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 text-md-right">
+                        <ul class="nav-links list-unstyled nav-right">
+                            <li data-aos="fade-down"><a href="#">Homepagina</a></li>
+                            <li data-aos="fade-down"><a href="#">Winkel</a></li>
+                            <li data-aos="fade-down"><a href="#">Afspraak maken</a></li>
+                            <li data-aos="fade-down"><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="copyright" data-aos="fade-down">
+                            <p><small> &#169; Copyright 2021. All Rights Reserved.</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="copyright" style="border-style: none" data-aos="fade-down">
+                            <p><small>Design: El Jattari Azdine - <a href="mailto: azdine.eljattari@hotmail.com">Azdine.eljattari@hotmail.com</a></small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script>
         $(function () {
             if ($('#rounded-pill-quality-img').mouseover(function () {
+                console.log("JE ZIT ERIN!");
                 $("#quality-img").attr("src", "Images/icons8-quality.gif");
             }))
 
