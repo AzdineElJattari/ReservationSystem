@@ -18,14 +18,14 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     @Styles.Render("~/Content/css")
-    @Styles.Render("~/Styles/Home.css")
+    @Styles.Render("~/Styles/Home/Home.css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    @RenderBody()
-    <div class="container">
+    <div class="container-color-body" style="z-index: -999"></div>
+    <div class="container container-navbar">
         <div class="row">
-            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;">
+            <nav class="navbar navbar-expand-lg navbar-light" data-aos="fade-down">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -34,16 +34,16 @@
                         <a class="navbar-brand mobile-navbar-brand" href="#" data-aos="fade-down"><img class="img-responsive" alt="barber-logo" src="~/Images/logo.png" width="120" height="120" style="padding-top: 10px;" /></a>
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item pt-md-2" data-aos="fade-down">
-                                <a class="nav-link active home" aria-current="page" href="#">Homepagina</a>
+                                <a>@Html.ActionLink("Homepagina", "Home", "Home", null, new { @class = "nav-link pricelist" })</a>
                             </li>
                             <li class="nav-item pt-md-2" data-aos="fade-down">
-                                <a class="nav-link pricelist" href="#">Winkel</a>
+                                <a>@Html.ActionLink("Winkel", "Index", "Shop", null, new { @class = "nav-link pricelist" })</a>
                             </li>
                             <li class="nav-item pt-md-2" data-aos="fade-down">
-                                <a class="nav-link pricelist" href="#">Afspraak maken</a>
+                                <a>@Html.ActionLink("Afspraak maken", "Index", "Appointment", new { @class = "nav-link pricelist" })</a>
                             </li>
                             <li class="nav-item pt-md-2" data-aos="fade-down">
-                                <a class="nav-link shop" href="#" tabindex="-1" aria-disabled="true">Contact</a>
+                                <a>@Html.ActionLink("Contact", "Index", "Contact", new { @class = "nav-link pricelist" })</a>
                             </li>
                         </ul>
                         <div class="container-nb">
@@ -56,31 +56,14 @@
                                         </button>
                                     </form>
                                 </div>
+                                <!-- Button trigger modal -->
                                 <div class="col-2 pt-md-2">
-                                    <!-- Button trigger modal -->
                                     <span data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                         <button class="btn btn-outline-success btn-search" data-aos="fade-down" id="btn-shopping-cart" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Winkelkar">
                                             <img alt="shopping-cart" src="~/Images/shoppingcart.png" height="20" width="20" />
                                         </button>
                                     </span>
                                     <!-- Modal -->
-                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    ...
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary">Understood</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="col-2 pt-md-2">
                                     <button class="btn btn-outline-success btn-search" data-aos="fade-down" id="btn-user-profile" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profiel">
@@ -94,195 +77,56 @@
             </nav>
         </div>
     </div>
-    <div class="row row-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="container border-end border-dark mb-md-3">
-                        <div class="text-center">
-                            <div class="card-wrapper mb-md-2 me-md-4" data-aos="fade-left" data-aos-duration="1000">
-                                <div class="sec-one-card shadow" id="rounded-pill-quality-img">
-                                    <p class="card-head-title">Gegarandeerde kwaliteit</p>
-                                    <img alt="quality-image" src="~/Images/icons8-quality-static.png" width="55" height="55" class="img-responsive" id="quality-img" />
-                                </div>
-                            </div>
-                            <div class="card-wrapper mb-md-2 me-md-4" data-aos="fade-right" data-aos-duration="1000">
-                                <div class="sec-one-card shadow" id="rounded-pill-cheap-img">
-                                    <p class="card-head-title">Voordelig in prijs</p>
-                                    <img alt="quality-image" src="~/Images/icons8-cheap-static.png" width="55" height="55" class="img-responsive" id="cheap-img" />
-                                </div>
-                            </div>
-                            <div class="card-wrapper mb-md-2 me-md-4" data-aos="fade-left" data-aos-duration="1000">
-                                <div class="sec-one-card shadow" id="rounded-pill-schedule-img">
-                                    <p class="card-head-title">Snelle service</p>
-                                    <img alt="quality-image" src="~/Images/icons8-schedule-static.png" width="55" height="55" class="img-responsive" id="schedule-img" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <section class="sec sec-img">
-                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="https://wallpaperaccess.com/full/1936423.jpg" alt="Barbershop Wallpapers - Top Free Barbershop Backgrounds - WallpaperAccess/>" class="d-block w-100 carousel-image">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://www.wallpapertip.com/wmimgs/27-276995_wallpaper-barbershop.jpg" class="d-block w-100 carousel-image" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://www.wallpapertip.com/wmimgs/95-956819_barber.jpg" class="d-block w-100 carousel-image" alt="...">
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Vorige</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Volgende</span>
-                            </button>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-section-two" style="margin-top: 8%; margin-bottom: 8%; box-shadow: 0 -5px 5px -3px #333, 0 -5px 5px -3px #333, 0 5px 5px -1px #333">
-        <div class="container d-flex justify-content-center">
-            <div class="row">
-                <div class="col-md-12">
-                    <section class="sec sec-servicesbox-info d-flex justify-content-center">
-                        <div class="partial-border text-left" data-aos="fade-up">
-                            <p class="head-title-servicesbox">Services</p>
-                            <p class="body-servicesbox">
-                                Het hout aan de muren, het eigenzinnige antiek en de geur van pure haarproducten versmelten tot een heerlijke cocktail.
-                                In wezen is kapper Bouidi er voor mannen die de voorkeur geven aan een no-nonsense omgeving boven de salon.
-                                Maar tegelijkertijd verwelkomen we ook mooie en modieuze kinderen met open armen voor een professioneel kapsel.
-                                Kom binnen, maak het uzelf gemakkelijk en laat u overweldigen door de magie van onze kappers.
-                            </p>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-section-three" style="margin-bottom: 5%; box-shadow: 0 -5px 5px -3px #333, 0 -5px 5px -3px #333, 0 5px 5px -1px #333">
+    @RenderBody()
+    <footer class="footer-59391" style="z-index: 999">
         <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <div class="site-logo">
+                        <a class="navbar-brand mobile-navbar-brand" href="#" data-aos="fade-down"><img class="img-responsive" alt="barber-logo" src="~/Images/logo.png" width="120" height="120" style="padding-top: 10px;" /></a>
+                    </div>
+                </div>
+                <div class="col-md-8 text-md-right">
+                    <ul class="list-unstyled social-icons">
+                        <li data-aos="fade-down"><a href="#" class="fb"><span class="fa fa-facebook"></span></a></li>
+                        <li data-aos="fade-down"><a href="#" class="in"><span class="fa fa-instagram"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-md-6 ">
+                    <ul class="nav-links list-unstyled nav-left">
+                        <li data-aos="fade-down"><a href="#">Privacy</a></li>
+                        <li data-aos="fade-down"><a href="#">Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <ul class="nav-links list-unstyled nav-right">
+                        <li data-aos="fade-down"><a href="#">Homepagina</a></li>
+                        <li data-aos="fade-down"><a href="#">Winkel</a></li>
+                        <li data-aos="fade-down"><a href="#">Afspraak maken</a></li>
+                        <li data-aos="fade-down"><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="row">
-                <div class="col-md-12">
-                    <section class="sec sec-pricelist d-flex justify-content-between">
-                        <div class="card shadow-lg border-dark" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" style="width: 18rem;">
-                            <img src="https://image.freepik.com/free-photo/barber-clips-handsome-kid-sides-with-scissors_99043-3118.jpg" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title" style="color: black; font-family: 'Teko', sans-serif; font-size: 30px">Kinderen</h5>
-                                <p class="card-text" style="color: black; font-family: 'Roboto Condensed', sans-serif;">Wilt u een prachtige snit voor uw kind? Dan bent u bij het juiste adres. Boek nu een afspraak</p>
-                                <a href="#" class="btn btn-theme">Maak afspraak</a>
-                            </div>
-                        </div>
-                        <div class="pt-md-5 d-flex flex-column">
-                            <img class="mb-md-3" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000" src="~/Images/hair-dryer.png" />
-                            <img class="mb-md-3" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000" src="~/Images/comb.png" />
-                            <img class="mb-md-3" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000" src="~/Images/scissors.png" />
-                            <img class="mb-md-3" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000" src="~/Images/shaving-razor.png" />
-                        </div>
-                        <div class="card shadow-lg border-dark" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" style="width: 18rem;">
-                            <img src="https://www.kappers.nl/files/shares/content/Fotolia_96686953_Subscription_Monthly_M.jpg" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title" style="color: black; font-family: 'Teko', sans-serif; font-size: 30px;">Heren</h5>
-                                <p class="card-text" style="color: black; font-family: 'Roboto Condensed', sans-serif;">Op zoek naar de perfecte fade voor uzelf of voor iemand anders? Dan bent u bij het juiste adres. Boek nu een afspraak</p>
-                                <a href="#" class="btn btn-theme">Maak afspraak</a>
-                            </div>
-                        </div>
-                    </section>
+                <div class="col">
+                    <div class="copyright" data-aos="fade-down">
+                        <p><small> &#169; Copyright 2021. All Rights Reserved.</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="copyright" style="border-style: none" data-aos="fade-down">
+                        <p><small>Design: El Jattari Azdine - <a href="mailto: azdine.eljattari@hotmail.com">Azdine.eljattari@hotmail.com</a></small></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container-section-four">
-        <div class="container d-flex flex-column text-center">
-            <div class="row">
-                <div class="col-md-12">
-                    <section>
-                        <p style="font-family: 'Roboto Condensed', sans-serif;" data-aos="zoom-in-up">We geven graag <span style="text-decoration: underline; color: orange; font-family: 'Roboto Condensed', sans-serif;">advies op maat</span>, want er loopt geen tweede jij rond op deze wereld. Bel ons of maak snel & gemakkelijk online een afspraak!</p>
-                        <span>
-                            @Html.ActionLink("#Stijladvies", "", "", new { }, new { @class = "stijladvies-link", data_aos = "flip-left", @style = "color: orange; font-family: 'Roboto Condensed', sans-serif;" })
-                            <i class="fas fa-arrow-right" style="color: orange"></i>
-                        </span>
-                        <div>
-                            <p class="head-title-servicesbox" data-aos="zoom-in-up" style="color: black; margin-top: 5%;">Producten</p>
-                            <p class="body-servicesbox" data-aos="zoom-in-up" style="color: black;">
-                                Onze klanten verdienen niets minder dan de beste producten voor haar- en baardverzorging.
-                                Neem bij uw volgend bezoek ook een kijkje naar de scheermessen van ons eigen huismerk!
-                            </p>
-                        </div>
-                        <div class="container d-flex justify-content-between" style="margin-top: 5%;">
-                            <img data-aos="zoom-in-up" src="https://logos-world.net/wp-content/uploads/2020/04/LOreal-Emblem.png" style="width: 20%;" />
-                            <img data-aos="zoom-in-up" src="https://www.henkel.nl/resource/image/214622/4x3/1000/750/d40312ad1a0db143ce427a6f432aaf32/wC/schwarzkopf-corporate.png" style="width: 20%;" />
-                            <img data-aos="zoom-in-up" src="https://seeklogo.com/images/W/wahl-logo-5261E76354-seeklogo.com.png" style="width: 19%;" />
-
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div>
-        <footer class="footer-59391">
-            <div class="container">
-                <div class="row mb-5">
-                    <div class="col-md-4">
-                        <div class="site-logo">
-                            <a class="navbar-brand mobile-navbar-brand" href="#" data-aos="fade-down"><img class="img-responsive" alt="barber-logo" src="~/Images/logo.png" width="120" height="120" style="padding-top: 10px;" /></a>
-                        </div>
-                    </div>
-                    <div class="col-md-8 text-md-right">
-                        <ul class="list-unstyled social-icons">
-                            <li data-aos="fade-down"><a href="#" class="fb"><span class="fa fa-facebook"></span></a></li>
-                            <li data-aos="fade-down"><a href="#" class="in"><span class="fa fa-instagram"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="row mb-5">
-                    <div class="col-md-6 ">
-                        <ul class="nav-links list-unstyled nav-left">
-                            <li data-aos="fade-down"><a href="#">Privacy</a></li>
-                            <li data-aos="fade-down"><a href="#">Policy</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 text-md-right">
-                        <ul class="nav-links list-unstyled nav-right">
-                            <li data-aos="fade-down"><a href="#">Homepagina</a></li>
-                            <li data-aos="fade-down"><a href="#">Winkel</a></li>
-                            <li data-aos="fade-down"><a href="#">Afspraak maken</a></li>
-                            <li data-aos="fade-down"><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="copyright" data-aos="fade-down">
-                            <p><small> &#169; Copyright 2021. All Rights Reserved.</small></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="copyright" style="border-style: none" data-aos="fade-down">
-                            <p><small>Design: El Jattari Azdine - <a href="mailto: azdine.eljattari@hotmail.com">Azdine.eljattari@hotmail.com</a></small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
+    </footer>
+    @Html.Partial("_ShoppingcartModal")
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script>
         $(function () {
