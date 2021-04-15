@@ -149,8 +149,8 @@
     <Content Include="fonts\icons.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\barber-chair.png" />
     <Content Include="Images\comb.png" />
+    <Content Include="Images\curved-arrow-shop.png" />
     <Content Include="Images\favicon.png" />
     <Content Include="Images\footer-background-img.png" />
     <Content Include="Images\hair-dryer.png" />
@@ -163,11 +163,14 @@
     <Content Include="Images\icons8-sparkling %281%29.gif" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\logo2.png" />
+    <Content Include="Images\male-beard.png" />
+    <Content Include="Images\male-hair.png" />
+    <Content Include="Images\razor-blade.png" />
     <Content Include="Images\scissors.png" />
     <Content Include="Images\searchglass.png" />
+    <Content Include="Images\sell-text-shop.png" />
     <Content Include="Images\shaving-razor.png" />
     <Content Include="Images\shoppingcart.png" />
-    <Content Include="Images\profile.png" />
     <Content Include="js\navbar.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
