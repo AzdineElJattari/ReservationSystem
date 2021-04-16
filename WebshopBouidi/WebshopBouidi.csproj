@@ -163,12 +163,16 @@
     <Content Include="Images\icons8-sparkling %281%29.gif" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\logo2.png" />
+    <Content Include="Images\maestro.png" />
     <Content Include="Images\male-beard.png" />
     <Content Include="Images\male-hair.png" />
+    <Content Include="Images\mastercard.png" />
+    <Content Include="Images\mistercash.png" />
+    <Content Include="Images\paypal.png" />
     <Content Include="Images\razor-blade.png" />
     <Content Include="Images\scissors.png" />
     <Content Include="Images\searchglass.png" />
-    <Content Include="Images\sell-text-shop.png" />
+    <Content Include="Images\sell-text.png" />
     <Content Include="Images\shaving-razor.png" />
     <Content Include="Images\shoppingcart.png" />
     <Content Include="js\navbar.js" />
@@ -212,7 +216,8 @@
     <Content Include="Views\Appointment\Appointment.cshtml" />
     <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\Shop\Index.cshtml" />
-    <Content Include="Views\Shared\_ShoppingcartModal.cshtml" />
+    <Content Include="Views\Shared\Partial\_ShoppingcartModal.cshtml" />
+    <Content Include="Views\Shared\Partial\_NavbarTwo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

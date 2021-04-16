@@ -3,7 +3,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     @Styles.Render("~/Styles/Shop/Shop.css")
 }
-<img class="hide-image-shop-mobile position-absolute" style="width: 30%; margin-left: 5%; margin-top: 26.5%;" src="~/Images/sell-text-shop.png" />
+<div class="container">
+    @Html.Partial("~/Views/Shared/Partial/_NavbarTwo.cshtml")
+</div>
 <div class="container position-relative">
     <div class="row">
         <div class="col-lg-3 mt-md-5 position-relative">
@@ -12,7 +14,7 @@
                 <a href="#" class="list-group-item" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000"><img class="me-md-2" width="20" src="~/Images/male-beard.png" /> Baardverzorging</a>
                 <a href="#" class="list-group-item" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000"><img class="me-md-2" width="20" src="~/Images/razor-blade.png" /> Elektronica/Apparatuur</a>
             </div>
-            <img class="hide-image-shop-mobile position-absolute" style="margin-top: 100%; margin-left: 30%;" src="~/Images/curved-arrow-shop.png" />
+            <img class="hide-image-shop-mobile position-absolute w-100" style="margin-top: 80%; margin-left: -10px;  transform: rotate(10deg);" src="~/Images/sell-text.png" />
         </div>
         <div class="col-md-9 mt-md-4">
             <div id="carouselExampleIndicators" class="carousel slide my-md-4 border border-light" data-bs-ride="carousel" data-aos="fade-up-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000">
