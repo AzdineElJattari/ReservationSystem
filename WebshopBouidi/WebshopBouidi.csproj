@@ -152,6 +152,8 @@
     <Content Include="Images\comb.png" />
     <Content Include="Images\curved-arrow-shop.png" />
     <Content Include="Images\favicon.png" />
+    <Content Include="Images\flag-be.png" />
+    <Content Include="Images\flag-uk.png" />
     <Content Include="Images\footer-background-img.png" />
     <Content Include="Images\hair-dryer.png" />
     <Content Include="Images\icons8-cheap-static.png" />
