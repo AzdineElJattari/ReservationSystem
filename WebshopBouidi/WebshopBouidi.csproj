@@ -172,6 +172,7 @@
     <Content Include="Images\mistercash.png" />
     <Content Include="Images\paypal.png" />
     <Content Include="Images\razor-blade.png" />
+    <Content Include="Images\razor.png" />
     <Content Include="Images\scissors.png" />
     <Content Include="Images\searchglass.png" />
     <Content Include="Images\sell-text.png" />
