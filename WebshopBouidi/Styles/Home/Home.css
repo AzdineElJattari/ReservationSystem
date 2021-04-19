@@ -35,6 +35,33 @@ html, body {
     height: 100%;
 }
 
+/*Back to top button*/
+.scrollToTopBtn {
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 25px;
+    line-height: 48px;
+    width: 48px;
+    /* place it at the bottom right corner */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    /* keep it at the top of everything else */
+    z-index: 100;
+    /* hide with opacity */
+    opacity: 1;
+    /* also add a translate effect */
+    transform: translateY(100px);
+    /* and a transition */
+    transition: all .5s ease
+}
+
+.showBtn {
+    opacity: 1;
+    transform: translateY(0)
+}
 
 /*Navbar content*/
 .container-navbar {
@@ -52,12 +79,8 @@ html, body {
     z-index: 1;
 }
 
-.nav-item {
-    font-family: 'Lora', serif;
-}
-
-.form-control, .btn-search {
-    font-family: 'Lora', serif;
+.navbar-link, .form-control, .btn-search {
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show > .nav-link {
@@ -112,7 +135,6 @@ html, body {
 }
 
 /*Sections*/
-
 /*Section image slider + cards (one)*/
 .row-section, .row-section-two {
     margin-top: 5%;

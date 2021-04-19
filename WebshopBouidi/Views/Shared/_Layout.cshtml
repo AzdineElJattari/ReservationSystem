@@ -26,7 +26,7 @@
     <div class="container container-navbar">
         <div class="row">
             <nav class="navbar navbar-expand-lg navbar-light" data-aos="fade-down">
-                <div class="container-fluid">
+                <div class="container-fluid position-relative">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -72,6 +72,19 @@
                                             <i class="fa fa-user"></i> Profiel
                                         </a>
                                     </span>
+                                </div>
+                                <div>
+                                    <ul class="navbar-nav position-absolute" style="right: 0;" data-aos="fade-down">
+                                        <li class="nav-item dropdown nav-item-second">
+                                            <a class="nav-link dropdown-toggle" style="color: white; font-size: 13px; margin-top: 10px;" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fas fa-language"></i> Vertaling
+                                            </a>
+                                            <ul class="dropdown-menu" style="z-index: 10;" aria-labelledby="navbarDropdownMenuLink">
+                                                <li><a class="dropdown-item" href="#" style="font-size: 13px;">BE <img src="~/Images/flag-be.png" width="15" style="margin-bottom: 2px;" /></a></li>
+                                                <li><a class="dropdown-item" href="#" style="font-size: 13px;">ENG <img src="~/Images/flag-uk.png" width="15" height="10" style="margin-bottom: 2px;" /></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -145,8 +158,35 @@
             </div>
         </div>
     </footer>
+    <button class="scrollToTopBtn">☝️</button>
     @Html.Partial("~/Views/Shared/Partial/_ShoppingcartModal.cshtml")
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script>
+        var scrollToTopBtn = document.querySelector(".scrollToTopBtn");
+        var rootElement = document.documentElement;
+
+        function handleScroll() {
+            // Do something on scroll
+            var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+            if ((rootElement.scrollTop / scrollTotal) > 0.150) {
+                // Show button
+                scrollToTopBtn.classList.add("showBtn");
+            } else {
+                // Hide button
+                scrollToTopBtn.classList.remove("showBtn");
+            }
+        }
+
+        function scrollToTop() {
+            // Scroll to top logic
+            rootElement.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+        }
+        scrollToTopBtn.addEventListener("click", scrollToTop);
+        document.addEventListener("scroll", handleScroll);
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // make it as accordion for smaller screens
@@ -184,10 +224,8 @@
     <script>
         $(function () {
             if ($('#rounded-pill-quality-img').mouseover(function () {
-                console.log("JE ZIT ERIN!");
                 $("#quality-img").attr("src", "Images/icons8-quality.gif");
             }))
-
                 if ($('#rounded-pill-quality-img').mouseleave(function () {
                     $("#quality-img").attr("src", "Images/icons8-quality-static.png");
                 }))

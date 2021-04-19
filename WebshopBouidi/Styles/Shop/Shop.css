@@ -100,7 +100,7 @@
 
         .product-grid4 .social li a:hover {
             color: #fff;
-            background: orange;
+            background: #EEBC27;
         }
 
         .product-grid4 .social li a:after, .product-grid4 .social li a:before {
@@ -152,7 +152,7 @@
     .product-grid4 .product-discount-label {
         left: auto;
         right: 10px;
-        background-color: orange;
+        background-color: #EEBC27;
     }
 
     .product-grid4:hover .product-new-label {
@@ -175,12 +175,12 @@
             color: #000;
     }
 
-    .product-grid4 .title a:hover {
-                color: orange;
-    }
+        .product-grid4 .title a:hover {
+            color: #EEBC27;
+        }
 
     .product-grid4 .price {
-        color: orange;
+        color: #EEBC27;
         font-size: 17px;
         font-weight: 700;
         margin: 0 2px 15px 0;
@@ -211,12 +211,12 @@
 
     .product-grid4:hover .add-to-cart {
         border: 1px solid transparent;
-        background: orange;
+        background: #EEBC27;
         color: #fff
     }
 
     .product-grid4 .add-to-cart:hover {
-        background-color: orange;
+        background-color: #EEBC27;
         box-shadow: 0 0 10px rgba(0,0,0,.5)
     }
 
@@ -237,6 +237,27 @@
 }
 .nav-item-second, .dropdown-item {
     font-size: 14px;
+}
+
+/*Container filter*/
+.container-filter {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #000;
+}
+
+/*Pagination*/
+.page-link-shop {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    color: #000;
+}
+
+.page-link-shop:hover {
+    color: #EEBC27;
 }
 
 /*Media queries*/

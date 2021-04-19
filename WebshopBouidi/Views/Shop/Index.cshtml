@@ -6,10 +6,27 @@
 <div class="container">
     @Html.Partial("~/Views/Shared/Partial/_NavbarTwo.cshtml")
 </div>
-<div class="container position-relative">
+<div class="container position-relative" style="z-index: -1">
     <div class="row">
-        <div class="col-md-12 mt-md-4">
-            <div id="carouselExampleIndicators" style="width: 70%;" class="carousel slide border border-light" data-bs-ride="carousel" data-aos="fade-up-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000">
+        <div class="col-md-3 container-filter" style="margin-top: 45%;">
+            <div class="d-flex align-items-start">
+                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <strong class="mb-md-2"><i class="fas fa-filter"></i> Filter</strong>
+                    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+                    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
+                    <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
+                    <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+                </div>
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 mt-md-4 h-25">
+            <div id="carouselExampleIndicators" class="carousel slide border border-dark w-100" data-bs-ride="carousel" data-aos="fade-up-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active carousel-indicator-shop" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="carousel-indicator-shop" aria-label="Slide 2"></button>
@@ -45,9 +62,8 @@
                                     <img class="pic-2" src="https://media.s-bol.com/qQYgxmjLLJ2p/550x550.jpg">
                                 </a>
                                 <ul class="social">
-                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                    <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                    <li><a href="#" data-tip="Toevoegen aan verlanglijst"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li><a href="#" data-tip="Toevoegen aan winkelmand"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                                 <span class="product-new-label">New</span>
                                 <span class="product-discount-label">-10%</span>
@@ -58,7 +74,7 @@
                                     $14.40
                                     <span>$16.00</span>
                                 </div>
-                                <a class="add-to-cart" href="">ADD TO CART</a>
+                                <a class="add-to-cart" href="">TOEVOEGEN</a>
                             </div>
                         </div>
                     </div>
@@ -70,7 +86,6 @@
                                     <img class="pic-2" src="https://media.s-bol.com/mqQDvlDDkpN9/550x548.jpg">
                                 </a>
                                 <ul class="social">
-                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                                     <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
                                     <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
@@ -82,7 +97,7 @@
                                     $17.60
                                     <span>$20.00</span>
                                 </div>
-                                <a class="add-to-cart" href="">ADD TO CART</a>
+                                <a class="add-to-cart" href="">TOEVOEGEN</a>
                             </div>
                         </div>
                     </div>
@@ -94,7 +109,6 @@
                                     <img class="pic-2" src="https://media.s-bol.com/J8q04p4L52vK/550x552.jpg">
                                 </a>
                                 <ul class="social">
-                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                                     <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
                                     <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
@@ -107,7 +121,7 @@
                                     $14.40
                                     <span>$16.00</span>
                                 </div>
-                                <a class="add-to-cart" href="">ADD TO CART</a>
+                                <a class="add-to-cart" href="">TOEVOEGEN</a>
                             </div>
                         </div>
                     </div>
@@ -119,7 +133,6 @@
                                     <img class="pic-2" src="https://media.s-bol.com/gZvBlW9RpwMk/550x550.jpg">
                                 </a>
                                 <ul class="social">
-                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                                     <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
                                     <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
@@ -132,7 +145,7 @@
                                     $14.40
                                     <span>$16.00</span>
                                 </div>
-                                <a class="add-to-cart" href="">ADD TO CART</a>
+                                <a class="add-to-cart" href="">TOEVOEGEN</a>
                             </div>
                         </div>
                     </div>
@@ -144,7 +157,6 @@
                                     <img class="pic-2" src="https://media.s-bol.com/gZvBlW9RpwMk/550x550.jpg">
                                 </a>
                                 <ul class="social">
-                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                                     <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
                                     <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
@@ -157,14 +169,43 @@
                                     $14.40
                                     <span>$16.00</span>
                                 </div>
-                                <a class="add-to-cart" href="">ADD TO CART</a>
+                                <a class="add-to-cart" href="">TOEVOEGEN</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="row" style="margin-bottom: 10%;"></div>
+            <div class="row" style="margin-bottom: 5%; margin-top: 5%;">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination pagination-shop">
+                            <li class="page-item">
+                                <a class="page-link page-link-shop" href="#" aria-label="Previous">
+                                    <i class="fas fa-angle-double-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link page-link-shop" href="#" aria-label="Previous">
+                                    <i class="fas fa-angle-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link page-link-shop" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link page-link-shop" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link page-link-shop" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link page-link-shop" href="#" aria-label="Next">
+                                    <i class="fas fa-angle-right"></i>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link page-link-shop" href="#" aria-label="Previous">
+                                    <i class="fas fa-angle-double-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
     </div>
 </div>
