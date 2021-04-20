@@ -127,7 +127,6 @@
     <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -149,13 +148,15 @@
     <Content Include="fonts\icons.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\comb.png" />
-    <Content Include="Images\curved-arrow-shop.png" />
-    <Content Include="Images\favicon.png" />
+    <Content Include="Images\bg-masthead.jpg" />
     <Content Include="Images\flag-be.png" />
     <Content Include="Images\flag-uk.png" />
-    <Content Include="Images\footer-background-img.png" />
-    <Content Include="Images\hair-dryer.png" />
+    <Content Include="Images\Fullsize\1.jpg" />
+    <Content Include="Images\Fullsize\2.jpg" />
+    <Content Include="Images\Fullsize\3.jpg" />
+    <Content Include="Images\Fullsize\4.jpg" />
+    <Content Include="Images\Fullsize\5.jpg" />
+    <Content Include="Images\Fullsize\6.jpg" />
     <Content Include="Images\icons8-cheap-static.png" />
     <Content Include="Images\icons8-cheap.gif" />
     <Content Include="Images\icons8-quality-static.png" />
@@ -163,22 +164,19 @@
     <Content Include="Images\icons8-schedule-static.png" />
     <Content Include="Images\icons8-schedule.gif" />
     <Content Include="Images\icons8-sparkling %281%29.gif" />
-    <Content Include="Images\logo.png" />
     <Content Include="Images\logo2.png" />
     <Content Include="Images\maestro.png" />
-    <Content Include="Images\male-beard.png" />
-    <Content Include="Images\male-hair.png" />
     <Content Include="Images\mastercard.png" />
     <Content Include="Images\mistercash.png" />
     <Content Include="Images\paypal.png" />
-    <Content Include="Images\razor-blade.png" />
-    <Content Include="Images\razor.png" />
-    <Content Include="Images\scissors.png" />
-    <Content Include="Images\searchglass.png" />
-    <Content Include="Images\sell-text.png" />
-    <Content Include="Images\shaving-razor.png" />
-    <Content Include="Images\shoppingcart.png" />
-    <Content Include="js\navbar.js" />
+    <Content Include="Images\razor%281%29.png" />
+    <Content Include="Images\Thumbnails\1.jpg" />
+    <Content Include="Images\Thumbnails\2.jpg" />
+    <Content Include="Images\Thumbnails\3.jpg" />
+    <Content Include="Images\Thumbnails\4.jpg" />
+    <Content Include="Images\Thumbnails\5.jpg" />
+    <Content Include="Images\Thumbnails\6.jpg" />
+    <Content Include="Js\Home.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="package.json" />
@@ -203,6 +201,7 @@
     <Content Include="Scripts\semantic.js" />
     <Content Include="Scripts\semantic.min.js" />
     <Content Include="Scripts\semantic.site.js" />
+    <Content Include="Styles\Contact\Contact.css" />
     <Content Include="Styles\Home\Home.css" />
     <Content Include="Styles\Shop\Shop.css" />
     <Content Include="Web.config" />
@@ -217,10 +216,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Appointment\Appointment.cshtml" />
-    <Content Include="Views\Contact\Contact.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Shop\Index.cshtml" />
     <Content Include="Views\Shared\Partial\_ShoppingcartModal.cshtml" />
-    <Content Include="Views\Shared\Partial\_NavbarTwo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

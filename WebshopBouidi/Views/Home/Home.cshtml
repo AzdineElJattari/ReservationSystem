@@ -3,141 +3,163 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row row-section">
-    <div class="container-fluid">
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-10 align-self-end">
+                <h1 class="text-uppercase text-white font-weight-bold">Bouidi de kapper met #1 fade's in Antwerpen</h1>
+                <hr class="divider my-4" />
+            </div>
+            <div class="col-lg-8 align-self-baseline">
+                <p class="text-white-75 font-weight-light mb-5">Op zoek naar een propere snit voor uw kind? Op zoek naar een nette fade kapsel voor uzelf? Dan bent u op het juiste adres bij kapper Bouidi!</p>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Ontdek meer</a>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- About-->
+<section class="page-section bg-primary" id="about">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="text-black mt-0">Over ons</h2>
+                <hr class="divider light my-4" />
+                <p class="text-white-50 mb-4">
+                    Het hout aan de muren, het eigenzinnige antiek en de geur van pure haarproducten versmelten tot een heerlijke cocktail.
+                    In wezen is kapper Bouidi er voor mannen die de voorkeur geven aan een no-nonsense omgeving boven de salon.
+                    Maar tegelijkertijd verwelkomen we ook mooie en modieuze kinderen met open armen voor een professioneel kapsel.
+                    Kom binnen, maak het uzelf gemakkelijk en laat u overweldigen door de magie van onze kappers.
+                </p>
+                <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Bekijk services</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services-->
+<section class="page-section" id="services">
+    <div class="container">
+        <h2 class="text-center mt-0">Services</h2>
+        <hr class="divider my-4" />
         <div class="row">
-            <div class="col-md-4" style="z-index: 1;">
-                <div class="container border-end border-dark mb-md-3" data-aos="fade-down">
-                    <div class="text-center">
-                        <div class="card-wrapper mb-md-2 me-md-4" data-aos="fade-left" data-aos-duration="1000">
-                            <div class="sec-one-card shadow" id="rounded-pill-quality-img">
-                                <p class="card-head-title">Gegarandeerde kwaliteit</p>
-                                <img alt="quality-image" src="~/Images/icons8-quality-static.png" width="55" height="55" class="img-responsive" id="quality-img" />
-                            </div>
-                        </div>
-                        <div class="card-wrapper mb-md-2 me-md-4" data-aos="fade-right" data-aos-duration="1000">
-                            <div class="sec-one-card shadow" id="rounded-pill-cheap-img">
-                                <p class="card-head-title">Voordelig in prijs</p>
-                                <img alt="quality-image" src="~/Images/icons8-cheap-static.png" width="55" height="55" class="img-responsive" id="cheap-img" />
-                            </div>
-                        </div>
-                        <div class="card-wrapper mb-md-2 me-md-4" data-aos="fade-left" data-aos-duration="1000">
-                            <div class="sec-one-card shadow" id="rounded-pill-schedule-img">
-                                <p class="card-head-title">Snelle service</p>
-                                <img alt="quality-image" src="~/Images/icons8-schedule-static.png" width="55" height="55" class="img-responsive" id="schedule-img" />
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <i class="fas fa-4x fa-gem text-primary mb-4"></i>
+                    <h3 class="h4 mb-2">Kwaliteit #1</h3>
+                    <p class="text-muted mb-0">Kwaliteit leveren aan de klant staat bij kapper Bouidi centraal!</p>
                 </div>
             </div>
-            <div class="col-md-8">
-                <section class="sec sec-img">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="https://wallpaperaccess.com/full/1936484.jpg" alt="Barbershop Wallpapers - Top Free Barbershop Backgrounds - WallpaperAccess/>" class="d-block w-100 carousel-image">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://www.wallpapertip.com/wmimgs/27-276995_wallpaper-barbershop.jpg" class="d-block w-100 carousel-image" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="https://wallpaperaccess.com/full/1936586.jpg" class="d-block w-100 carousel-image" alt="...">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Vorige</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Volgende</span>
-                        </button>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <i class="fas fa-4x fa-calendar-check text-primary mb-4"></i>
+                    <h3 class="h4 mb-2">Afspraak inplannen</h3>
+                    <p class="text-muted mb-0">Gemakkelijk en snel een afspraak inplannen is mogelijk bij kapper Bouidi.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <i class="fas fa-4x fa-sms text-primary mb-4"></i>
+                    <h3 class="h4 mb-2">24/7 service</h3>
+                    <p class="text-muted mb-0">Bij kapper bouidi kan u <u>altijd</u> terecht voor allerlei vragen omtrent kapsels, producten, etc.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <i class="fas fa-4x fa-money-check-alt text-primary mb-4"></i>
+                    <h3 class="h4 mb-2">Voordelig in prijs</h3>
+                    <p class="text-muted mb-0">Bij kapper Bouidi letten we ook op de portemonnee van onze klanten. Daarom leveren we kwaliteit aan een lage prijs!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Portfolio-->
+<div id="portfolio">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="~/Images/Fullsize/1.jpg">
+                    <img class="img-fluid" src="~/Images/Thumbnails/1.jpg" alt="" />
+                    <div class="portfolio-box-caption">
+                        <div class="project-category text-white-50">Category</div>
+                        <div class="project-name">Project Name</div>
                     </div>
-                </section>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="~/Images/Fullsize/2.jpg">
+                    <img class="img-fluid" src="~/Images/Thumbnails/2.jpg" alt="" />
+                    <div class="portfolio-box-caption">
+                        <div class="project-category text-white-50">Category</div>
+                        <div class="project-name">Project Name</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="~/Images/Fullsize/3.jpg">
+                    <img class="img-fluid" src="~/Images/Thumbnails/3.jpg" alt="" />
+                    <div class="portfolio-box-caption">
+                        <div class="project-category text-white-50">Category</div>
+                        <div class="project-name">Project Name</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="~/Images/Fullsize/4.jpg">
+                    <img class="img-fluid" src="~/Images/Thumbnails/4.jpg" alt="" />
+                    <div class="portfolio-box-caption">
+                        <div class="project-category text-white-50">Category</div>
+                        <div class="project-name">Project Name</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="~/Images/Fullsize/5.jpg">
+                    <img class="img-fluid" src="~/Images/Thumbnails/5.jpg" alt="" />
+                    <div class="portfolio-box-caption">
+                        <div class="project-category text-white-50">Category</div>
+                        <div class="project-name">Project Name</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="~/Images/Fullsize/6.jpg">
+                    <img class="img-fluid" src="~/Images/Fullsize/6.jpg" alt="" />
+                    <div class="portfolio-box-caption p-3">
+                        <div class="project-category text-white-50">Category</div>
+                        <div class="project-name">Project Name</div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
 </div>
-<div class="container-section-two" style="margin-top: 8%; margin-bottom: 8%; box-shadow: 0 -5px 5px -3px #333, 0 -5px 5px -3px #333, 0 5px 5px -1px #333">
-    <div class="container d-flex justify-content-center">
-        <div class="row">
-            <div class="col-md-12">
-                <section class="sec sec-servicesbox-info d-flex justify-content-center">
-                    <div class="partial-border text-left" data-aos="fade-up">
-                        <p class="head-title-servicesbox">Services</p>
-                        <p class="body-servicesbox">
-                            Het hout aan de muren, het eigenzinnige antiek en de geur van pure haarproducten versmelten tot een heerlijke cocktail.
-                            In wezen is kapper Bouidi er voor mannen die de voorkeur geven aan een no-nonsense omgeving boven de salon.
-                            Maar tegelijkertijd verwelkomen we ook mooie en modieuze kinderen met open armen voor een professioneel kapsel.
-                            Kom binnen, maak het uzelf gemakkelijk en laat u overweldigen door de magie van onze kappers.
-                        </p>
-                    </div>
-                </section>
-            </div>
-        </div>
+<!-- Call to action-->
+<section class="page-section bg-dark text-white">
+    <div class="container text-center">
+        <h2 class="mb-4">Zin in een knipbeurt?</h2>
+        <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Boek nu <img width="20" src="~/Images/razor(1).png" /></a>
     </div>
-</div>
-<div class="container-section-three" style="margin-bottom: 5%; box-shadow: 0 -5px 5px -3px #333, 0 -5px 5px -3px #333, 0 5px 5px -1px #333">
+</section>
+<!-- Contact-->
+<section class="page-section" id="contact">
     <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mt-0">Let's Get In Touch!</h2>
+                <hr class="divider my-4" />
+                <p class="text-muted mb-5">Zin in een nieuw fris kapsel voor uzelf of voor uw kind? Geef ons een belletje of verzend ons een email en we nemen spoedig contact met u op.</p>
+            </div>
+        </div>
         <div class="row">
-            <div class="col-md-12">
-                <section class="sec sec-pricelist d-flex justify-content-between">
-                    <div class="card shadow-lg border-dark" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" style="width: 18rem;">
-                        <img src="https://image.freepik.com/free-photo/barber-clips-handsome-kid-sides-with-scissors_99043-3118.jpg" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: black; font-family: 'Teko', sans-serif; font-size: 30px">Kinderen</h5>
-                            <p class="card-text" style="color: black; font-family: 'Roboto Condensed', sans-serif;">Wilt u een prachtige snit voor uw kind? Dan bent u bij het juiste adres. Boek nu een afspraak</p>
-                            <a href="#" class="btn btn-theme">Maak afspraak</a>
-                        </div>
-                    </div>
-                    <div class="pt-md-5 d-flex flex-column">
-                        <img class="mb-md-3" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000" src="~/Images/hair-dryer.png" />
-                        <img class="mb-md-3" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000" src="~/Images/comb.png" />
-                        <img class="mb-md-3" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000" src="~/Images/scissors.png" />
-                        <img class="mb-md-3" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="1000" src="~/Images/shaving-razor.png" />
-                    </div>
-                    <div class="card shadow-lg border-dark" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" style="width: 18rem;">
-                        <img src="https://www.kappers.nl/files/shares/content/Fotolia_96686953_Subscription_Monthly_M.jpg" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: black; font-family: 'Teko', sans-serif; font-size: 30px;">Heren</h5>
-                            <p class="card-text" style="color: black; font-family: 'Roboto Condensed', sans-serif;">Op zoek naar de perfecte fade voor uzelf of voor iemand anders? Dan bent u bij het juiste adres. Boek nu een afspraak</p>
-                            <a href="#" class="btn btn-theme">Maak afspraak</a>
-                        </div>
-                    </div>
-                </section>
+            <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+                <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+                <div>+32 (486) 874-9867</div>
+            </div>
+            <div class="col-lg-4 mr-auto text-center">
+                <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+                <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
+                @Html.ActionLink("Mail ons", "Index", "Contact", null, new { @class = "d-block" })
             </div>
         </div>
     </div>
-</div>
-<div class="container-section-four">
-    <div class="container d-flex flex-column text-center">
-        <div class="row">
-            <div class="col-md-12">
-                <section>
-                    <p style="font-family: 'Roboto Condensed', sans-serif;" data-aos="zoom-in-up">We geven graag <span style="text-decoration: underline; color: orange; font-family: 'Roboto Condensed', sans-serif;">advies op maat</span>, want er loopt geen tweede jij rond op deze wereld. Bel ons of maak snel & gemakkelijk online een afspraak!</p>
-                    <span>
-                        @Html.ActionLink("#Stijladvies", "", "", new { }, new { @class = "stijladvies-link", data_aos = "flip-left", @style = "color: orange; font-family: 'Roboto Condensed', sans-serif;" })
-                        <i class="fas fa-arrow-right" style="color: orange"></i>
-                    </span>
-                    <div>
-                        <p class="head-title-servicesbox" data-aos="zoom-in-up" style="color: black; margin-top: 5%;">Producten</p>
-                        <p class="body-servicesbox" data-aos="zoom-in-up" style="color: black;">
-                            Onze klanten verdienen niets minder dan de beste producten voor haar- en baardverzorging.
-                            Neem bij uw volgend bezoek ook een kijkje naar de scheermessen van ons eigen huismerk!
-                        </p>
-                    </div>
-                    <div class="container d-flex justify-content-between" style="margin-top: 5%;">
-                        <img data-aos="zoom-in-up" src="https://logos-world.net/wp-content/uploads/2020/04/LOreal-Emblem.png" style="width: 20%;" />
-                        <img data-aos="zoom-in-up" src="https://www.henkel.nl/resource/image/214622/4x3/1000/750/d40312ad1a0db143ce427a6f432aaf32/wC/schwarzkopf-corporate.png" style="width: 20%;" />
-                        <img data-aos="zoom-in-up" src="https://seeklogo.com/images/W/wahl-logo-5261E76354-seeklogo.com.png" style="width: 19%;" />
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
-</div>
+</section>

@@ -1,0 +1,97 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Oxygen&display=swap');
+
+body {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), url(../assets/img/bg-masthead.jpg);
+}
+
+h2 {
+    font-family: 'Oxygen', sans-serif;
+}
+
+a {
+
+}
+
+/*Google map*/
+.google-maps {
+    position: relative;
+    padding-bottom: 100%;
+    height: 0;
+    overflow: hidden;
+    margin-top: 2%;
+}
+
+.google-maps iframe {
+        position: absolute;
+        width: 100% !important;
+        height: 100% !important;
+}
+
+.container-contact-information {
+    font-family: 'Cabin', sans-serif !important;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 14px;
+}
+
+#contact {
+    margin-top: 10%;
+    letter-spacing: 2px;
+}
+
+#contact a {
+    color: #fff;
+}
+
+@media (max-width: 575.98px) {
+
+    #contact {
+        padding-bottom: 800px;
+    }
+
+    #contact .maps iframe {
+            width: 100%;
+            height: 450px;
+    }
+}
+
+@media (min-width: 576px) {
+
+    #contact {
+        padding-bottom: 800px;
+    }
+
+        #contact .maps iframe {
+            width: 100%;
+            height: 450px;
+        }
+}
+
+@media (min-width: 768px) {
+
+    #contact {
+        padding-bottom: 350px;
+    }
+
+        #contact .maps iframe {
+            width: 100%;
+            height: 850px;
+        }
+}
+
+@media (min-width: 992px) {
+    #contact {
+        padding-bottom: 200px;
+    }
+
+        #contact .maps iframe {
+            width: 100%;
+            height: 700px;
+        }
+}
+
+
+#author a {
+    color: #fff;
+    text-decoration: none;
+}

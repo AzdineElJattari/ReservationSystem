@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Styles/Contact/Contact.css")
+}
+
+<div class="row" id="contact">
+    <div class="container mt-5">
+
+        <div class="row" style="height:550px;">
+            <div class="col-md-6">
+                <div class="google-maps"><iframe width="100" height="50" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=nl&amp;q=Turnhoutsebaan%20316,%202140%20Antwerpen,%20Belgium+(Mijn%20bedrijfsnaam)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
+            </div>
+            <div class="col-md-6">
+                <h2 class="font-weight-bold text-white">Contacteer ons</h2>
+                <form action="">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control mt-2" placeholder="Naam" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control mt-2" placeholder="Voornaam" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control mt-2" placeholder="E-mail" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control mt-2" placeholder="Telefoonnr." required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="" rows="3" required></textarea>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                    <label class="form-check-label" style="color: white;" for="invalidCheck2">
+                                        Accepteer de voorwaarden
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-light" type="submit"><i class="fas fa-paper-plane"></i> Verzend</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="text-white">
+                    <h2 class="mt-4 font-weight-bold"><i class="fas fa-info-circle"></i> Informatie</h2>
+                    <div class="container-contact-information">
+                        <i class="fas fa-phone mt-3"></i> <a href="tel:+">(+324) 695775</a><br>
+                        <i class="fa fa-envelope mt-3"></i> <a href="">abdelatif.bouidi@hotmail.com</a><br>
+                        <i class="fas fa-map-marker-alt mt-3"></i><a href="https://www.google.be/maps/place/Turnhoutsebaan+316,+2140+Antwerpen/&#64;51.213897,4.4392897,17z/data=!3m1!4b1!4m5!3m4!1s0x47c3f77332e78801:0x2aca655721077914!8m2!3d51.213897!4d4.4414837"> Turnhoutsebaan, 316, 2140 Borgerhout</a><br>
+                    </div>
+                    <div class="my-4">
+                        <a href="#"><i class="fab fa-facebook fa-3x pr-4"></i></a>
+                        <a href="#"><i class="fab fa-instagram fa-3x pr-4"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

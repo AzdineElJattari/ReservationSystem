@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace WebshopBouidi.Controllers
 {
     public class ContactController : Controller
     {
         // GET: Contact
-        public ActionResult Index()
+        public ActionResult Index() //Naam moet overeenkomen met de naam van de view
         {
-            return View();
+            {
+                return View();
+            }
         }
     }
 }

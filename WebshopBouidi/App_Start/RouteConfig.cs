@@ -15,11 +15,6 @@ namespace WebshopBouidi
                 defaults: new { controller = "Home", action = "Home", id = UrlParameter.Optional }
             );
             routes.MapRoute(
-                name: "Shop",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Shop", action = "Index", id = UrlParameter.Optional }
-            );
-            routes.MapRoute(
                 name: "Appointment",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Appointment", action = "Index", id = UrlParameter.Optional }
