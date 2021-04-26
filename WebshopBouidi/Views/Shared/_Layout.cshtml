@@ -11,28 +11,27 @@
     <meta name='copyright' content='Copyright (c) 2021 AzdineWebdeign &amp; development. All rights reserved.' />
     <link rel="shortcut icon" href="~/Images/favicon.png">
     <title>@ViewBag.Title - Bouidi</title>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Styles/Home/Home.css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body id="page-top">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="padding-top: 0; padding-bottom: 0;" id="mainNav">
         <div class="container">
-            <img href="#page-top" class="navbar-brand js-scroll-trigger img-responsive" alt="logo-brand" src="~/Images/logo2.png" width="100" />
+            <img href="#page-top" data-aos="fade-down" class="navbar-brand js-scroll-trigger img-responsive" alt="logo-brand" src="~/Images/logo2.png" width="100" />
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
+            <div class="collapse navbar-collapse" id="navbarResponsive" data-aos="zoom-in-down">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                    <li class="nav-item">@Html.ActionLink("Homepagina", "Home", "Home", null, new { @class = "nav-link js-scroll-trigger" })</li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Over ons</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Afspraak maken</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                    <li class="nav-item">@Html.ActionLink("Homepagina", "Home", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Afspraak maken", "Index", "Appointment", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Contact", "Index", "Contact", null, new { @class = "nav-link" })</li>
                 </ul>
             </div>
         </div>
@@ -49,33 +48,18 @@
     <!-- Third party plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+    <!-- AOS animate -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <!-- Core theme JS-->
     <script src="~/Js/Home.js"></script>
     <script>
-        var scrollToTopBtn = document.querySelector(".scrollToTopBtn");
-        var rootElement = document.documentElement;
-
-        function handleScroll() {
-            // Do something on scroll
-            var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight
-            if ((rootElement.scrollTop / scrollTotal) > 0.150) {
-                // Show button
-                scrollToTopBtn.classList.add("showBtn");
-            } else {
-                // Hide button
-                scrollToTopBtn.classList.remove("showBtn");
-            }
-        }
-
-        function scrollToTop() {
-            // Scroll to top logic
-            rootElement.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            })
-        }
-        scrollToTopBtn.addEventListener("click", scrollToTop);
-        document.addEventListener("scroll", handleScroll);
+        $(function () {
+            $('#dp').datepicker();
+        });
     </script>
 </body>
 </html>

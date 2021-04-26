@@ -1,0 +1,114 @@
+﻿@import url(//fonts.googleapis.com/css?family=Montserrat:400,500,700);
+
+.banner3 {
+  font-family: "Montserrat", sans-serif;
+  color: #8d97ad;
+  font-weight: 300;
+  max-height: 800px;
+  width: 100%;
+  padding: 0;
+}
+
+.banner3 .banner {
+  position: relative;
+  max-height: 700px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  width: 100%;
+  display: table;
+}
+
+.banner3 h1,
+.banner3 h2,
+.banner3 h3,
+.banner3 h4,
+.banner3 h5,
+.banner3 h6 {
+  color: #3e4555;
+}
+
+.banner3 .font-weight-medium {
+  font-weight: 500;
+}
+
+.banner3 .subtitle {
+  color: #8d97ad;
+  line-height: 24px;
+}
+
+.banner3 .btn-danger-gradiant {
+        background: #ff4d7e;
+        background: -webkit-linear-gradient(legacy-direction(to right), #c6af30 0%, #e6b21c 100%);
+        background: -webkit-gradient(linear, left top, right top, from(#c6af30), to(#e6b21c));
+        background: -webkit-linear-gradient(left, #c6af30 0%, #e6b21c 100%);
+        background: -o-linear-gradient(left, #c6af30 0%, #e6b21c 100%);
+        background: linear-gradient(to right, #c6af30 0%, #e6b21c 100%);
+        border: 0px;
+}
+
+.banner3 .btn-danger-gradiant:hover {
+  background: #ff6a5b;
+  background: -webkit-linear-gradient(legacy-direction(to right), #e6b21c 0%, #c6af30 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#e6b21c), to(#c6af30));
+  background: -webkit-linear-gradient(left, #e6b21c 0%, #c6af30 100%);
+  background: -o-linear-gradient(left, #e6b21c 0%, #c6af30 100%);
+  background: linear-gradient(to right, #e6b21c 0%, #c6af30 100%);
+}
+
+.banner3 .btn-danger-gradiant.active,
+.banner3 .btn-danger-gradiant:active,
+.banner3 .btn-danger-gradiant:focus {
+  -webkit-box-shadow: 0px;
+  box-shadow: 0px;
+  opacity: 1;
+}
+
+
+.banner3 .btn-md {
+  padding: 15px 45px;
+  font-size: 16px;
+}
+
+.banner3 .form-row {
+  margin: 0;
+}
+
+.banner3 label.font-12 {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.banner3 .form-control {
+  color: #8d97ad;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.banner3 .date label {
+  cursor: pointer;
+  margin: 0;
+}
+
+@media (max-width: 370px) {
+  .banner3 .left,
+  .banner3 .right {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 320px) {
+  .banner3 .left,
+  .banner3 .right {
+    padding: 25px 15px;
+  }
+}
+
+.banner3 .font-14 {
+  font-size: 14px;
+}
+
+.banner3 .text-inverse {
+  color: #3e4555 !important;
+}

@@ -1,0 +1,54 @@
+﻿@model WebshopBouidi.Models.DateTimeBinder
+@{
+    ViewBag.Title = "Appointment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Styles/Appointment/Appointment.css")
+}
+
+<div class="container-fluid banner3">
+    <div class="py-5 banner" style="background-image: url(https://www.wallpapertip.com/wmimgs/95-956819_barber.jpg);">
+        <div class="container">
+            <div class="row w-100 d-flex justify-content-center mt-md-5">
+                <div class="col-md-7 col-lg-5">
+                    <h3 class="my-3 text-white font-weight-medium text-uppercase text-center">Reserveer nu</h3>
+                    <div class="bg-white">
+                        <div class="form-row border-bottom">
+                            <div class="p-4 left border-right w-50">
+                                <label class="text-inverse font-12 text-uppercase">Voornaam</label>
+                                <input type="text" class="border-0 p-0 font-14 form-control" placeholder="Uw voornaam" />
+                            </div>
+                            <div class="p-4 right w-50">
+                                <label class="text-inverse font-12 text-uppercase">Achternaam</label>
+                                <input type="text" class="border-0 p-0 font-14 form-control" placeholder="Uw achternaam" />
+                            </div>
+                        </div>
+                        <div class="form-row border-bottom p-4">
+                            <label class="text-inverse font-12 text-uppercase">E-mail</label>
+                            <input type="text" class="border-0 p-0 font-14 form-control" placeholder="Vul hier uw e-mail adres" />
+                        </div>
+                        <div class="form-row border-bottom p-4">
+                            <label class="text-inverse font-12 text-uppercase">Mobiel nummer</label>
+                            <input type="text" class="border-0 p-0 font-14 form-control" placeholder="Vul hier uw mobiel nummer" />
+                        </div>
+                        <div class="form-row border-bottom p-4 position-relative">
+                            <label class="text-inverse font-12 text-uppercase">Datum afpraak</label>
+                            <div class="input-group date">
+                                <input class="border-0 p-0 font-14 form-control" name="appointment-time" type="datetime-local" value="@Model.DateTime.ToString("dd/MM/yyyy")" />
+                            </div>
+                        </div>
+                        <div class="form-row border-bottom p-4">
+                            <label class="text-inverse font-12 text-uppercase">Bericht</label>
+                            <textarea col="1" row="1" class="border-0 p-0 font-weight-light font-14 form-control" placeholder="Typ hier uw bericht"></textarea>
+                        </div>
+                        <div>
+                            <button class="m-0 border-0 py-4 font-14 font-weight-medium btn btn-danger-gradiant btn-block position-relative rounded-0 text-center text-white text-uppercase">
+                                <span>Maak afspraak</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
