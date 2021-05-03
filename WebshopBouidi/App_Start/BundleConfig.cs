@@ -28,7 +28,8 @@ namespace WebshopBouidi
             bundles.Add(new StyleBundle("~/Styles/css").Include(
                 "~/Content/bootstrap.css",
                 "~/Content/semantic.css",
-                "~/Styles/Home.css"));
+                "~/Styles/Home/Home.css",
+                "~/Styles/Appointment/Appointment.css"));
         }
     }
 }

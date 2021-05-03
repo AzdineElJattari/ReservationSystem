@@ -1,4 +1,4 @@
-﻿@model WebshopBouidi.Models.DateTimeBinder
+﻿@model WebshopBouidi.Models.DateTimeModel
 @{
     ViewBag.Title = "Appointment";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -33,7 +33,13 @@
                         <div class="form-row border-bottom p-4 position-relative">
                             <label class="text-inverse font-12 text-uppercase">Datum afpraak</label>
                             <div class="input-group date">
-                                <input class="border-0 p-0 font-14 form-control" name="appointment-time" type="datetime-local" value="@Model.DateTime.ToString("dd/MM/yyyy")" />
+                                @Html.TextBoxFor(x => x.Date, "{0:yyyy-MM-ddTHH:mm}", new
+                           {
+                               @class = "border-0 p-0 font-14 form-control",
+                               required = "required",
+                               @type = "datetime-local",
+                               @name = "appointment-time",
+                           })
                             </div>
                         </div>
                         <div class="form-row border-bottom p-4">
@@ -51,4 +57,3 @@
         </div>
     </div>
 </div>
-
