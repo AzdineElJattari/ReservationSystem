@@ -13,5 +13,12 @@ namespace WebshopBouidi.Controllers
             dateTimeModel.Date = DateTime.Now;
             return View(dateTimeModel);
         }
+
+        //POST: Appointment
+        [HttpPost]
+        public ActionResult Index(AppointmentModel appointment)
+        {
+            return View();
+        }
     }
 }

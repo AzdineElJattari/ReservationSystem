@@ -245,9 +245,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SemanticUIStart.cs" />
+    <Compile Include="BAL\Appointment\AppointmentBAL.cs" />
     <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\Appointment\AppointmentDAL.cs" />
     <Compile Include="DAL\ProjectContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

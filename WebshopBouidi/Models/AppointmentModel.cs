@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebshopBouidi.Models
@@ -22,5 +23,8 @@ namespace WebshopBouidi.Models
         [Required(ErrorMessage = "Mobile nr. is required")]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Mobile Nr. is not valid")]
         public string MobileNumber { get; set; }
+
+        [Required(ErrorMessage = "Date is required")]
+        public DateTime AppointmentDate { get; set; }
     }
 }
