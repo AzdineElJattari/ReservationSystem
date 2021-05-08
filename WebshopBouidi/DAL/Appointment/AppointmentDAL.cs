@@ -5,7 +5,7 @@ namespace WebshopBouidi.DAL.Appointment
 {
     public class AppointmentDAL
     {
-        private ProjectContext context { get; }
+        private ProjectContext context { get; } = new ProjectContext();
 
         public void Create(AppointmentModel appointment)
         {

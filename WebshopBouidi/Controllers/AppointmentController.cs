@@ -1,5 +1,5 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using WebshopBouidi.BAL.Appointment;
 using WebshopBouidi.Models;
 
 namespace WebshopBouidi.Controllers
@@ -9,16 +9,16 @@ namespace WebshopBouidi.Controllers
         // GET: Appointment
         public ActionResult Index()
         {
-            DateTimeModel dateTimeModel = new DateTimeModel();
-            dateTimeModel.Date = DateTime.Now;
-            return View(dateTimeModel);
+            AppointmentModel appointmentModel = new AppointmentModel();
+            return View(appointmentModel);
         }
 
         //POST: Appointment
         [HttpPost]
-        public ActionResult Index(AppointmentModel appointment)
+        public ActionResult Create(AppointmentModel appointment)
         {
-            return View();
+            AppointmentBAL.CreateAppointment(appointment);
+            return RedirectToAction("Index", "Appointment");
         }
     }
 }

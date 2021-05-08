@@ -8,10 +8,5 @@ namespace WebshopBouidi.Models
     {
         [BindProperty, DisplayFormat(DataFormatString = "{0:yyyy-MM-ddTHH:mm}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
-
-        public DateTimeModel()
-        {
-
-        }
     }
 }

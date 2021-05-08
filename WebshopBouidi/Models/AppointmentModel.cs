@@ -25,6 +25,10 @@ namespace WebshopBouidi.Models
         public string MobileNumber { get; set; }
 
         [Required(ErrorMessage = "Date is required")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)] //ZIEN WAAROM DATUM NIET MEE WORDT OPGESLAGEN!
         public DateTime AppointmentDate { get; set; }
+
+        [MaxLength]
+        public string Message { get; set; }
     }
 }
