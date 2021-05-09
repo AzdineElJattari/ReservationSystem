@@ -29,9 +29,9 @@
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive" data-aos="zoom-in-down">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                    <li class="nav-item">@Html.ActionLink("Homepagina", "Home", "Home", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Afspraak maken", "Index", "Appointment", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Contact", "Index", "Contact", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item position-relative"><i class="fas fa-home position-absolute"></i>@Html.ActionLink("Homepagina", "Home", "Home", null, new { @class = "nav-link", @style = "margin-left: 5px;" })</li>
+                    <li class="nav-item position-relative"><i class="fas fa-calendar-check position-absolute"></i>@Html.ActionLink("Afspraak maken", "Index", "Appointment", null, new { @class = "nav-link", @style = "margin-left: 5px;" })</li>
+                    <li class="nav-item position-relative"><i class="fas fa-phone-alt position-absolute"></i>@Html.ActionLink("Contact", "Index", "Contact", null, new { @class = "nav-link", @style = "margin-left: 5px;" })</li>
                 </ul>
             </div>
         </div>
@@ -40,7 +40,7 @@
     <button class="scrollToTopBtn">☝️</button>
     <!-- Footer-->
     <footer class="bg-light py-5">
-        <div class="container"><div class="small text-center text-muted">Copyright © 2021 - Made by <a href="https://www.linkedin.com/in/azdine-el-jattari-1361a1183/">El Jattari Azdine</a> with &hearts;</div></div>
+        <div class="container pt-md-2"><div class="small text-center text-muted" style="padding-top: 10px;">Copyright © 2021 - Made by <a href="https://www.linkedin.com/in/azdine-el-jattari-1361a1183/">El Jattari Azdine</a> with &hearts;</div></div>
     </footer>
     <!-- Bootstrap core JS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

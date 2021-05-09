@@ -1,42 +1,48 @@
 ﻿@model WebshopBouidi.Models.AppointmentModel
 
-@using (Html.BeginForm("Create", "Appointment", FormMethod.Post, new { @class = "bg-white" }))
-{
-    <div class="form-row border-bottom">
-        <div class="p-4 left border-right w-50">
-            <label class="text-inverse font-12 text-uppercase">Voornaam</label>
-            @Html.TextBoxFor(m => m.CustomerName, new { @class = "border-0 p-0 font-14 form-control", type = "text", placeholder = "Uw voornaam" })
+<div class="container">
+    <div class="row">
+        @using (Html.BeginForm("Create", "Appointment", FormMethod.Post, new { @class = "bg-white", @style = "border-radius: 10px;" }))
+        {
+            <div class="form-row border-bottom">
+                <div class="p-4 left border-right w-50">
+                    <label class="text-inverse font-12 text-uppercase">Voornaam</label>
+                    @Html.TextBoxFor(m => m.CustomerName, new { @class = "border-0 p-0 font-14 form-control", type = "text", placeholder = "Uw voornaam" })
+                </div>
+                <div class="p-4 right w-50">
+                    <label class="text-inverse font-12 text-uppercase">Achternaam</label>
+                    @Html.TextBoxFor(m => m.CustomerLastName, new { @class = "border-0 p-0 font-14 form-control", type = "text", placeholder = "Uw achternaam" })
+                </div>
+            </div>
+            <div class="form-row border-bottom p-4">
+                <label class="text-inverse font-12 text-uppercase">E-mail</label>
+                @Html.TextBoxFor(m => m.Email, new { @class = "border-0 p-0 font-14 form-control", type = "text", placeholder = "Uw e-mailadres" })
+            </div>
+            <div class="form-row border-bottom p-4">
+                <label class="text-inverse font-12 text-uppercase">Mobiel nummer</label>
+                @Html.TextBoxFor(m => m.MobileNumber, new { @class = "border-0 p-0 font-14 form-control", type = "text", placeholder = "Uw mobiele nr." })
+            </div>
+            <div class="form-row border-bottom p-4 position-relative">
+                <label class="text-inverse font-12 text-uppercase">Datum afpraak</label>
+                <div class="input-group date">
+                    @Html.TextBoxFor(x => x.AppointmentDate, "{0:yyyy-MM-ddTHH:mm}", new
+               {
+                   @class = "border-0 p-0 font-14 form-control",
+                   required = "required",
+                   @type = "datetime-local",
+                   @name = "appointment-time",
+               })
+                </div>
+            </div>
+            <div class="form-row border-bottom p-4">
+                <label class="text-inverse font-12 text-uppercase">Bericht</label>
+                @Html.TextAreaFor(m => m.Message, new { @class = "border-0 p-0 font-weight-light font-14 form-control", placeholder = "Typ hier uw bericht", col = "1", row = "1" })
+            </div>
+        }
+    </div>
+    <div class="row mt-md-2 d-flex justify-content-center">
+        <div class="w-75">
+            <input class="m-0 border-0 py-4 font-14 font-weight-medium btn btn-danger-gradiant btn-block position-relative rounded-25 text-center text-white text-uppercase" type="submit" value="Maak afspraak" />
         </div>
-        <div class="p-4 right w-50">
-            <label class="text-inverse font-12 text-uppercase">Achternaam</label>
-            @Html.TextBoxFor(m => m.CustomerLastName, new { @class = "border-0 p-0 font-14 form-control", type = "text", placeholder = "Uw achternaam" })
-        </div>
     </div>
-    <div class="form-row border-bottom p-4">
-        <label class="text-inverse font-12 text-uppercase">E-mail</label>
-        @Html.TextBoxFor(m => m.Email, new { @class = "border-0 p-0 font-14 form-control", type = "text", placeholder = "Uw e-mail adres" })
-    </div>
-    <div class="form-row border-bottom p-4">
-        <label class="text-inverse font-12 text-uppercase">Mobiel nummer</label>
-        @Html.TextBoxFor(m => m.MobileNumber, new { @class = "border-0 p-0 font-14 form-control", type = "text", placeholder = "Uw mobiele nr." })
-    </div>
-    <div class="form-row border-bottom p-4 position-relative">
-        <label class="text-inverse font-12 text-uppercase">Datum afpraak</label>
-        <div class="input-group date">
-            @Html.TextBoxFor(x => x.AppointmentDate, "{0:yyyy-MM-ddTHH:mm}", new
-       {
-           @class = "border-0 p-0 font-14 form-control",
-           required = "required",
-           @type = "datetime-local",
-           @name = "appointment-time",
-       })
-        </div>
-    </div>
-    <div class="form-row border-bottom p-4">
-        <label class="text-inverse font-12 text-uppercase">Bericht</label>
-        @Html.TextAreaFor(m => m.Message, new { @class = "border-0 p-0 font-weight-light font-14 form-control", placeholder = "Typ hier uw bericht", col = "1", row = "1" })
-    </div>
-    <div>
-        <input class="m-0 border-0 py-4 font-14 font-weight-medium btn btn-danger-gradiant btn-block position-relative rounded-0 text-center text-white text-uppercase" type="submit" value="Maak afspraak" />
-    </div>
-}
+</div>
