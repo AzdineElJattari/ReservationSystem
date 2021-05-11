@@ -17,8 +17,14 @@ namespace WebshopBouidi.Controllers
         [HttpPost]
         public ActionResult Create(AppointmentModel appointment)
         {
-            AppointmentBAL.CreateAppointment(appointment);
-            return RedirectToAction("Index", "Appointment");
+            _ = appointment;
+            if (ModelState.IsValid)
+            {
+                AppointmentBAL.CreateAppointment(appointment);
+                ViewBag.Msg = "Dankuwel voor het maken van een afspraak!";
+                return RedirectToAction("Index", "Appointment");
+            }
+            return PartialView("Index", appointment);
         }
     }
 }

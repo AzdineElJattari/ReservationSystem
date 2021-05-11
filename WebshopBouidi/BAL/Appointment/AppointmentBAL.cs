@@ -10,7 +10,7 @@ namespace WebshopBouidi.BAL.Appointment
         private static DateTime Today { get; } = new DateTime();
         public static void CreateAppointment(AppointmentModel appointment)
         {
-            if (appointment.AppointmentDate.Date > Today.Date && appointment.CustomerName.Length > 0 && appointment.CustomerLastName.Length > 0 && appointment.Email.Length > 0 && appointment.MobileNumber.Length > 0)
+            if (appointment.AppointmentDate.Value.Date > Today.Date && appointment.CustomerName.Length > 0 && appointment.CustomerLastName.Length > 0 && appointment.Email.Length > 0 && appointment.MobileNumber.Length > 0)
             {
                 AppointmentModel modelToCreate = new AppointmentModel
                 {

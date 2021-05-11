@@ -269,6 +269,14 @@
     <Compile Include="Migrations\202105080120473_ChangeInDateTimePropertyV2.Designer.cs">
       <DependentUpon>202105080120473_ChangeInDateTimePropertyV2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105110110586_ChangedAppointmentDateTimeToNullable.cs" />
+    <Compile Include="Migrations\202105110110586_ChangedAppointmentDateTimeToNullable.Designer.cs">
+      <DependentUpon>202105110110586_ChangedAppointmentDateTimeToNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105110128424_ChangedAppointmentDateTimeToNullableV2.cs" />
+    <Compile Include="Migrations\202105110128424_ChangedAppointmentDateTimeToNullableV2.Designer.cs">
+      <DependentUpon>202105110128424_ChangedAppointmentDateTimeToNullableV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppointmentModel.cs" />
     <Compile Include="Models\DateTimeModel.cs" />
@@ -393,6 +401,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105080120473_ChangeInDateTimePropertyV2.resx">
       <DependentUpon>202105080120473_ChangeInDateTimePropertyV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105110110586_ChangedAppointmentDateTimeToNullable.resx">
+      <DependentUpon>202105110110586_ChangedAppointmentDateTimeToNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105110128424_ChangedAppointmentDateTimeToNullableV2.resx">
+      <DependentUpon>202105110128424_ChangedAppointmentDateTimeToNullableV2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

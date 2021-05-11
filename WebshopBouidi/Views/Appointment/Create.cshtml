@@ -4,46 +4,52 @@
     <div class="row">
         @using (Html.BeginForm("Create", "Appointment", FormMethod.Post, new { @class = "bg-white", @style = "border-radius: 10px;" }))
         {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-row border-bottom">
                 <div class="p-4 left border-right w-50">
                     <label class="text-inverse font-12 text-uppercase">Voornaam*</label>
                     @Html.TextBoxFor(m => m.CustomerName, new { @class = "border-0 p-0 font-14 form-control", type = "text", placeholder = "Uw voornaam" })
+                    @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+
                 </div>
                 <div class="p-4 right w-50">
                     <label class="text-inverse font-12 text-uppercase">Achternaam*</label>
                     @Html.TextBoxFor(m => m.CustomerLastName, new { @class = "border-0 p-0 font-14 form-control", type = "text", placeholder = "Uw achternaam" })
+                    @Html.ValidationMessageFor(model => model.CustomerLastName, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-row border-bottom p-4">
                 <label class="text-inverse font-12 text-uppercase">E-mail*</label>
                 @Html.TextBoxFor(m => m.Email, new { @class = "border-0 p-0 font-14 form-control", type = "text", placeholder = "Uw e-mailadres" })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
             </div>
             <div class="form-row border-bottom p-4">
                 <label class="text-inverse font-12 text-uppercase">Mobiele nummer*</label>
                 @Html.TextBoxFor(m => m.MobileNumber, new { @class = "border-0 p-0 font-14 form-control", type = "text", placeholder = "Uw mobiele nr." })
+                @Html.ValidationMessageFor(model => model.MobileNumber, "", new { @class = "text-danger" })
             </div>
             <div class="form-row border-bottom p-4 position-relative">
                 <label class="text-inverse font-12 text-uppercase">Datum afpraak*</label>
                 <div class="input-group date">
-                    @Html.TextBoxFor(x => x.AppointmentDate, "{0:yyyy-MM-ddTHH:mm}", new
-               {
-                   @class = "border-0 p-0 font-14 form-control",
-                   required = "required",
-                   @type = "datetime-local",
-                   @name = "appointment-time",
-               })
+                     @Html.EditorFor(m => m.AppointmentDate, new
+                {
+                    htmlAttributes = new { type = "datetime-local", required = "required" },
+                    @class = "border-0 p-0 font-14 form-control",
+                    @value = DateTime.Now.ToString()
+                })
+                    @Html.ValidationMessageFor(model => model.AppointmentDate, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-row border-bottom p-4">
                 <label class="text-inverse font-12 text-uppercase">Bericht</label>
                 @Html.TextAreaFor(m => m.Message, new { @class = "border-0 p-0 font-weight-light font-14 form-control", placeholder = "Typ hier uw bericht", col = "1", row = "1" })
             </div>
-            <div class="row mt-md-2 d-flex justify-content-center">
+            <div class="row d-flex justify-content-center">
                 <div class="w-75 mb-md-2">
                     <button id="submit-button" class="m-0 border-0 py-4 font-14 font-weight-medium btn btn-danger-gradiant btn-block position-relative rounded-25 text-center text-white text-uppercase">
                         Maak afspraak
                     </button>
-                    <button id="resultLoading" class="m-0 border-0 py-4 font-14 font-weight-medium btn btn-danger-gradiant btn-block position-relative rounded-25 text-center text-white text-uppercase">
+                    <button disabled id="resultLoading" class="m-0 border-0 py-4 font-14 font-weight-medium btn btn-danger-gradiant btn-block position-relative rounded-25 text-center text-white text-uppercase">
                         <div class="spinner-grow text-light" role="status">
                             <span class="sr-only">Loading...</span>
                         </div>
