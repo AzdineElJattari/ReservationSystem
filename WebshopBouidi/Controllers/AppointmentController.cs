@@ -17,7 +17,6 @@ namespace WebshopBouidi.Controllers
         [HttpPost]
         public ActionResult Create(AppointmentModel appointment)
         {
-            _ = appointment;
             if (ModelState.IsValid)
             {
                 AppointmentBAL.CreateAppointment(appointment);

@@ -17,7 +17,7 @@ namespace WebshopBouidi.Models
         public string CustomerLastName { get; set; }
 
         [Required(ErrorMessage = "E-mail is verplicht")]
-        [RegularExpression(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$", ErrorMessage = "Email is niet geldig")]
+        [EmailAddress(ErrorMessage = "E-mail adres is niet geldig")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Mobiele nr. is verplicht")]
@@ -25,7 +25,7 @@ namespace WebshopBouidi.Models
         public string MobileNumber { get; set; }
 
         [Required(ErrorMessage = "Datum afspraak is verplicht")]
-        public DateTime? AppointmentDate { get; set; } // DATE WERKT NIET -> WORDT OPGESLAGEN AlS NULL IN DB
+        public DateTime AppointmentDate { get; set; }
 
         [MaxLength]
         public string Message { get; set; }
