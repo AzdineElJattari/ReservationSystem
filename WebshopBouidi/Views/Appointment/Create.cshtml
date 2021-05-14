@@ -1,8 +1,8 @@
 ﻿@model WebshopBouidi.Models.AppointmentModel
 
 <div class="container">
-    <div class="row">
-        @using (Html.BeginForm("Create", "Appointment", FormMethod.Post, new { @class = "bg-white", @style = "border-radius: 10px;" }))
+    <div class="">
+        @using (Html.BeginForm("Create", "Appointment", FormMethod.Post, new { @class = "bg-white rounded" }))
         {
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-row border-bottom">
@@ -42,12 +42,12 @@
             </div>
             <div class="form-row border-bottom p-4">
                 <label class="text-inverse font-12 text-uppercase">Bericht</label>
-                @Html.TextAreaFor(m => m.Message, new { @class = "border-0 p-0 font-weight-light font-14 form-control", placeholder = "Typ hier uw bericht", col = "1", row = "1" })
+                @Html.TextAreaFor(m => m.Message, new { @class = "border-0 p-0 font-weight-light font-14 form-control", @style = "max-height: 100px;", placeholder = "Typ hier uw bericht", col = "1", row = "1" })
             </div>
-            <div class="row d-flex justify-content-center">
-                <div class="w-75 mb-md-2">
-                    <button id="submit-button" class="m-0 border-0 py-4 font-14 font-weight-medium btn btn-danger-gradiant btn-block position-relative rounded-25 text-center text-white text-uppercase">
-                        Maak afspraak
+            <div class="row d-flex justify-content-center appointment-row-card-button-mobile">
+                <div class="mb-md-2">
+                    <button id="submit-button">
+                        Maak afspraak <i class="fas fa-check ml-md-1"></i>
                     </button>
                     <button disabled id="resultLoading" class="m-0 border-0 py-4 font-14 font-weight-medium btn btn-danger-gradiant btn-block position-relative rounded-25 text-center text-white text-uppercase">
                         <div class="spinner-grow text-light" role="status">

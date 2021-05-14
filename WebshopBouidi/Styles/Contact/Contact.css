@@ -1,12 +1,36 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cabin&family=Oxygen&display=swap');
 
+
 body {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), url(../assets/img/bg-masthead.jpg);
+    color: white !important;
+    background-image: url(/Images/background-bouidi.jpg);
 }
 
 h2 {
-    font-family: 'Oxygen', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    color: #ffdc73 !important;
+    text-align: left;
+}
+
+.contact-card-icon {
+    color: #ffdc73 !important;
+}
+
+.btn-lineair {
+    padding: 10px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #f6d365 0%, #ffa700 51%, #f6d365 100%);
+}
+
+.btn-lineair:hover {
+    background-position: right center;
+    color: white;
 }
 
 /*Google map*/
@@ -85,7 +109,6 @@ h2 {
             height: 700px;
         }
 }
-
 
 #author a {
     color: #fff;

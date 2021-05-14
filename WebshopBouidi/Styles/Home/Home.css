@@ -31,6 +31,12 @@
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+/*Styling for all pages*/
+.form-control:focus {
+    border-color: #ffdc73 !important;
+    box-shadow: 0 0 0 0.2rem rgb(255 220 115 / 25%) !important;
+}
+
 *,
 *::before,
 *::after {
@@ -10780,4 +10786,18 @@ header.masthead {
 .showBtn {
     opacity: 1;
     transform: translateY(0)
+}
+
+
+@media (max-width: 768px) {
+
+    .icon-nav-item-mobile {
+        position: absolute !important;
+        margin-left: -2%;
+        margin-top: 3.5%;
+    }
+
+    .appointment-nav-link-mobile {
+        margin-left: 5% !important;
+    }
 }

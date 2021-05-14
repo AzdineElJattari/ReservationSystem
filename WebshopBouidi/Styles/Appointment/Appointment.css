@@ -1,4 +1,9 @@
 ﻿@import url(//fonts.googleapis.com/css?family=Montserrat:400,500,700);
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+    background-image: url(/Images/background-bouidi.jpg);
+}
 
 .banner3 {
   font-family: "Montserrat", sans-serif;
@@ -111,4 +116,52 @@
 
 .banner3 .text-inverse {
   color: #3e4555 !important;
+}
+
+.appointment-headtext {
+    font-family: 'Open Sans', sans-serif !important;
+    color: #ffdc73 !important;
+    text-align: center;
+}
+
+#submit-button {
+    padding: 20px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #f6d365 0%, #ffa700 51%, #f6d365 100%);
+    border: 0px;
+}
+
+#submit-button:hover {
+  background-position: right center;
+}
+
+/*Mobile*/
+
+@media (max-width: 768px) {
+    .col-appointment-mobile {
+        margin-top: 20%;
+        margin-left: 7%;
+    }
+    .appointment-row-card-button-mobile {
+        margin-bottom: 5%;
+    }
+
+    .copyright-text-mobile {
+        margin-top: 10.5%;
+    }
+
+    .icon-nav-item-mobile {
+        position: absolute !important;
+        margin-left: -2%;
+        margin-top: 3.5%;
+    }
+
+    .appointment-nav-link-mobile {
+        margin-left: 5% !important;
+    }
 }

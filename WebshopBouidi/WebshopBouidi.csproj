@@ -245,6 +245,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SemanticUIStart.cs" />
     <Compile Include="BAL\Appointment\AppointmentBAL.cs" />
+    <Compile Include="BAL\Contact\ContactBAL.cs" />
     <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -287,6 +288,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppointmentModel.cs" />
+    <Compile Include="Models\ContactModel.cs" />
     <Compile Include="Models\DateTimeModel.cs" />
     <Compile Include="Models\ParentViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -307,6 +309,7 @@
     <Content Include="fonts\icons.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\background-bouidi.jpg" />
     <Content Include="Images\bg-masthead.jpg" />
     <Content Include="Images\flag-be.png" />
     <Content Include="Images\flag-uk.png" />

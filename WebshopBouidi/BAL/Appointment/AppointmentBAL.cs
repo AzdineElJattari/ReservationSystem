@@ -7,7 +7,6 @@ namespace WebshopBouidi.BAL.Appointment
     public static class AppointmentBAL
     {
         private static AppointmentDAL AppointmentDAL { get; } = new AppointmentDAL();
-        private static DateTime Today { get; } = new DateTime();
         public static void CreateAppointment(AppointmentModel appointment)
         {
             try

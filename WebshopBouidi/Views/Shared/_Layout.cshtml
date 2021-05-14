@@ -25,13 +25,13 @@
 <body id="page-top">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="padding-top: 0; padding-bottom: 0;" id="mainNav">
         <div class="container">
-            <img href="#page-top" data-aos="fade-down" class="navbar-brand js-scroll-trigger img-responsive" alt="logo-brand" src="~/Images/logo2.png" width="100" />
+            <img style="padding-top: 0;" href="#page-top" data-aos="fade-down" class="navbar-brand js-scroll-trigger img-responsive" alt="logo-brand" src="~/Images/logo2.png" width="100" />
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive" data-aos="zoom-in-down">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                    <li class="nav-item position-relative"><i class="fas fa-home position-absolute"></i>@Html.ActionLink("Homepagina", "Home", "Home", null, new { @class = "nav-link", @style = "margin-left: 5px;" })</li>
-                    <li class="nav-item position-relative"><i class="fas fa-calendar-check position-absolute"></i>@Html.ActionLink("Afspraak maken", "Index", "Appointment", null, new { @class = "nav-link", @style = "margin-left: 5px;" })</li>
-                    <li class="nav-item position-relative"><i class="fas fa-phone-alt position-absolute"></i>@Html.ActionLink("Contact", "Index", "Contact", null, new { @class = "nav-link", @style = "margin-left: 5px;" })</li>
+                    <li class="nav-item position-relative"><i class="icon-nav-item-mobile fas fa-home position-absolute text-white"></i>@Html.ActionLink("Homepagina", "Home", "Home", null, new { @class = "nav-link appointment-nav-link-mobile", @style = "margin-left: 5px;" })</li>
+                    <li class="nav-item position-relative"><i class="icon-nav-item-mobile fas fa-calendar-check position-absolute text-white"></i>@Html.ActionLink("Afspraak maken", "Index", "Appointment", null, new { @class = "nav-link appointment-nav-link-mobile", @style = "margin-left: 5px;" })</li>
+                    <li class="nav-item position-relative"><i class="icon-nav-item-mobile fas fa-phone-alt position-absolute text-white"></i>@Html.ActionLink("Contact", "Index", "Contact", null, new { @class = "nav-link appointment-nav-link-mobile", @style = "margin-left: 5px;" })</li>
                 </ul>
             </div>
         </div>
@@ -39,8 +39,8 @@
     @RenderBody()
     <button class="scrollToTopBtn">☝️</button>
     <!-- Footer-->
-    <footer class="bg-light py-5">
-        <div class="container pt-md-2"><div class="small text-center text-muted" style="padding-top: 10px;">Copyright © 2021 - Made by <a href="https://www.linkedin.com/in/azdine-el-jattari-1361a1183/">El Jattari Azdine</a> with &hearts;</div></div>
+    <footer class="mt-md-5 bg-light position-relative d-flex justify-content-center" style="padding-bottom: 7.5%; width: 105%;">
+        <div class="container position-absolute py-md-5"><div class="copyright-text-mobile small text-center text-muted" style="margin-right: 10%;">Copyright © 2021 - Made by <a href="https://www.linkedin.com/in/azdine-el-jattari-1361a1183/">El Jattari Azdine</a> with &hearts;</div></div>
     </footer>
     <!-- Bootstrap core JS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -84,6 +84,5 @@
             var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
         })();
     </script>
-    <!-- /GetButton.io widget -->
 </body>
 </html>
