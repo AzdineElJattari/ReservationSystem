@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebshopBouidi.Models
 {
+    [Table("Appointment")]
     public class AppointmentModel
     {
         [Key]

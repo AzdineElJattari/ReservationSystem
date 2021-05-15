@@ -12,6 +12,7 @@ namespace WebshopBouidi.DAL
         }
 
         public DbSet<AppointmentModel> Appointments { get; set; }
+        public DbSet<ContactModel> Contacts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelbuilder)
         {

@@ -250,6 +250,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\Appointment\AppointmentDAL.cs" />
+    <Compile Include="DAL\Contact\ContactDAL.cs" />
     <Compile Include="DAL\ProjectContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -285,6 +286,14 @@
     <Compile Include="Migrations\202105120027591_AddedDateValidationToAppointmentModel.cs" />
     <Compile Include="Migrations\202105120027591_AddedDateValidationToAppointmentModel.Designer.cs">
       <DependentUpon>202105120027591_AddedDateValidationToAppointmentModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105152027295_AddedContactModal.cs" />
+    <Compile Include="Migrations\202105152027295_AddedContactModal.Designer.cs">
+      <DependentUpon>202105152027295_AddedContactModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105152032349_ChangeAppointModelTableName.cs" />
+    <Compile Include="Migrations\202105152032349_ChangeAppointModelTableName.Designer.cs">
+      <DependentUpon>202105152032349_ChangeAppointModelTableName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppointmentModel.cs" />
@@ -424,6 +433,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105120027591_AddedDateValidationToAppointmentModel.resx">
       <DependentUpon>202105120027591_AddedDateValidationToAppointmentModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105152027295_AddedContactModal.resx">
+      <DependentUpon>202105152027295_AddedContactModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105152032349_ChangeAppointModelTableName.resx">
+      <DependentUpon>202105152032349_ChangeAppointModelTableName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
