@@ -24,7 +24,6 @@ namespace WebshopBouidi.Models
         [Required(ErrorMessage = "Bericht ingeven is verplicht"), MaxLength]
         public string Message { get; set; }
 
-        [Required]
-        public string CreationDate { get; set; }
+        public string CreationDate { get; private set; } = DateTime.Now.ToString("g");
     }
 }

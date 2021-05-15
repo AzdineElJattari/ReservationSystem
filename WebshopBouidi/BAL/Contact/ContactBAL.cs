@@ -16,8 +16,7 @@ namespace WebshopBouidi.BAL.Contact
                     Name = contact.Name,
                     LastName = contact.LastName,
                     Email = contact.Email,
-                    Message = contact.Message,
-                    CreationDate = DateTime.Now.ToString("g")
+                    Message = contact.Message
                 };
                 ContactDAL.Create(modelToCreate);
             }

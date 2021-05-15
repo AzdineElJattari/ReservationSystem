@@ -13,9 +13,9 @@ namespace WebshopBouidi.BAL.Appointment
             {
                 AppointmentModel modelToCreate = new AppointmentModel
                 {
-                    CustomerName = appointment.CustomerName,
-                    CustomerLastName = appointment.CustomerLastName,
-                    Email = appointment.Email,
+                    CustomerName = appointment.CustomerName.ToLower(),
+                    CustomerLastName = appointment.CustomerLastName.ToLower(),
+                    Email = appointment.Email.ToLower(),
                     MobileNumber = appointment.MobileNumber,
                     AppointmentDate = appointment.AppointmentDate,
                     Message = appointment.Message

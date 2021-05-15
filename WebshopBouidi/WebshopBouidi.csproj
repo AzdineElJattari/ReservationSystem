@@ -299,6 +299,10 @@
     <Compile Include="Migrations\202105152054281_AddedCreationDatePropToContactModel.Designer.cs">
       <DependentUpon>202105152054281_AddedCreationDatePropToContactModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105152227074_ChangeInCreationDateOfContactModel.cs" />
+    <Compile Include="Migrations\202105152227074_ChangeInCreationDateOfContactModel.Designer.cs">
+      <DependentUpon>202105152227074_ChangeInCreationDateOfContactModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppointmentModel.cs" />
     <Compile Include="Models\ContactModel.cs" />
@@ -447,6 +451,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105152054281_AddedCreationDatePropToContactModel.resx">
       <DependentUpon>202105152054281_AddedCreationDatePropToContactModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105152227074_ChangeInCreationDateOfContactModel.resx">
+      <DependentUpon>202105152227074_ChangeInCreationDateOfContactModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

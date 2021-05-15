@@ -17,17 +17,17 @@ namespace WebshopBouidi.Controllers
             }
         }
 
-        //POST: Appointment
+        //POST: Contact
         [HttpPost]
         public async Task<ActionResult> Create(ContactModel contact)
         {
             if (ModelState.IsValid)
             {
-                var body = $"<p></p>"; //AANPASSEN
+                var body = $"<p>{contact.Message}</p>";
                 var message = new MailMessage();
-                message.To.Add(new MailAddress(contact.Email)); //VERANDEREN
-                message.From = new MailAddress("testmail.bouidi@gmail.com"); //VERANDEREN
-                message.Subject = $""; //AANPASSEN
+                message.To.Add(new MailAddress("testmail.bouidi@gmail.com"));
+                message.From = new MailAddress(contact.Email);
+                message.Subject = $"Contact bericht van {contact.Name} {contact.LastName} opgemaakt op {contact.CreationDate}"; //AANPASSEN
                 message.Body = string.Format(body);
                 message.IsBodyHtml = true;
 
@@ -36,14 +36,14 @@ namespace WebshopBouidi.Controllers
                     smtp.UseDefaultCredentials = false;
                     smtp.Credentials = new NetworkCredential(System.Configuration.ConfigurationManager.AppSettings["FromEmail"], System.Configuration.ConfigurationManager.AppSettings["FromPassword"]);
                     smtp.EnableSsl = true;
+                    _ = message;
                     await smtp.SendMailAsync(message);
                     ContactBAL.CreateContact(contact);
-                    ViewBag.Msg = ""; //AANPASSEN
+                    ViewBag.Msg = "Dankjewel voor het opmaken en verzenden van uw contact bericht, we nemen snel contact met u op!"; //AANPASSEN
                     return RedirectToAction("Index", "Contact");
                 }
             }
             return PartialView("Index", contact);
         }
-
     }
 }

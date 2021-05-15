@@ -37,7 +37,6 @@ namespace WebshopBouidi.Controllers
                     smtp.EnableSsl = true;
                     await smtp.SendMailAsync(message);
                     AppointmentBAL.CreateAppointment(appointment);
-                    ViewBag.Msg = "Dankuwel voor het maken van een afspraak!";
                     return RedirectToAction("Index", "Appointment");
                 }
             }
