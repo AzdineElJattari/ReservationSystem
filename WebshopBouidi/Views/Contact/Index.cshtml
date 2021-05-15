@@ -13,38 +13,7 @@
             </div>
             <div class="col-md-6 bg-white text-dark rounded p-md-4" style="padding-bottom: 0 !important" data-aos="zoom-in">
                 <h2 class="appointment-headtext" style="text-align: left; font-size: 26px;"><i class="fas fa-file-signature"></i> Contacteer ons</h2>
-                <form action="">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control mt-2" placeholder="Naam" required>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control mt-2" placeholder="Voornaam" required>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <input type="email" class="form-control mt-2" placeholder="E-mail" required>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control mt-2" placeholder="Telefoonnr." required>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <textarea class="form-control" style="max-height: 125px;" id="exampleFormControlTextarea1" placeholder="Typ hier uw bericht" rows="3" required></textarea>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <button id="contact-submit-button" class="btn btn-lineair btn-1" type="submit"><i class="fas fa-paper-plane"></i> Verzenden</button>
-                        </div>
-                    </div>
-                </form>
+                @Html.Partial("~/Views/Contact/Create.cshtml")
                 <div class="mt-md-3 pt-md-3 border-top">
                     <h2 class="appointment-headtext" style="text-align: left; font-size: 26px;"><i class="fas fa-info-circle"></i> Informatie</h2>
                     <div class="container-contact-information">
@@ -58,7 +27,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

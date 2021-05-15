@@ -18,7 +18,7 @@ namespace WebshopBouidi.Controllers
 
         //POST: Appointment
         [HttpPost]
-        public async Task<ActionResult> Create(AppointmentModel appointment) //DUBBLE CHECK
+        public async Task<ActionResult> Create(AppointmentModel appointment)
         {
             if (ModelState.IsValid)
             {

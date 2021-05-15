@@ -295,6 +295,10 @@
     <Compile Include="Migrations\202105152032349_ChangeAppointModelTableName.Designer.cs">
       <DependentUpon>202105152032349_ChangeAppointModelTableName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105152054281_AddedCreationDatePropToContactModel.cs" />
+    <Compile Include="Migrations\202105152054281_AddedCreationDatePropToContactModel.Designer.cs">
+      <DependentUpon>202105152054281_AddedCreationDatePropToContactModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppointmentModel.cs" />
     <Compile Include="Models\ContactModel.cs" />
@@ -392,6 +396,7 @@
     <Content Include="Views\Shared\Partial\_ShoppingcartModal.cshtml" />
     <Content Include="Views\Appointment\Index.cshtml" />
     <Content Include="Views\Appointment\Create.cshtml" />
+    <Content Include="Views\Contact\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -439,6 +444,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105152032349_ChangeAppointModelTableName.resx">
       <DependentUpon>202105152032349_ChangeAppointModelTableName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105152054281_AddedCreationDatePropToContactModel.resx">
+      <DependentUpon>202105152054281_AddedCreationDatePropToContactModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

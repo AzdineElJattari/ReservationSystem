@@ -7,7 +7,7 @@ namespace WebshopBouidi.BAL.Contact
     public class ContactBAL
     {
         private static ContactDAL ContactDAL { get; } = new ContactDAL();
-        public static void CreateAppointment(ContactModel contact)
+        public static void CreateContact(ContactModel contact)
         {
             try
             {
@@ -16,7 +16,8 @@ namespace WebshopBouidi.BAL.Contact
                     Name = contact.Name,
                     LastName = contact.LastName,
                     Email = contact.Email,
-                    Message = contact.Message
+                    Message = contact.Message,
+                    CreationDate = DateTime.Now.ToString("g")
                 };
                 ContactDAL.Create(modelToCreate);
             }
