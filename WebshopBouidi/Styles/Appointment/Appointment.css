@@ -147,8 +147,9 @@ body {
         margin-top: 20%;
         margin-left: 7%;
     }
-    .appointment-row-card-button-mobile {
-        margin-bottom: 5%;
+
+    .mobile-appointment-card-button {
+        padding-bottom: 5% !important;
     }
 
     .copyright-text-mobile {

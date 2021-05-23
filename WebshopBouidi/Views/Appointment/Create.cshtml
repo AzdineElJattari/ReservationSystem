@@ -33,7 +33,7 @@
                 <div class="input-group date">
                      @Html.EditorFor(m => m.AppointmentDate, new
                 {
-                    htmlAttributes = new { type = "datetime-local", required = "required" },
+                    htmlAttributes = new { type = "datetime-local", required = "required", @style = "margin-top: 5px;" },
                     @class = "border-0 p-0 font-14 form-control",
                     @value = DateTime.Now.ToString()
                 })
@@ -44,7 +44,7 @@
                 <label class="text-inverse font-12 text-uppercase">Bericht</label>
                 @Html.TextAreaFor(m => m.Message, new { @class = "border-0 p-0 font-weight-light font-14 form-control", @style = "max-height: 100px;", placeholder = "Typ hier uw bericht", col = "1", row = "1" })
             </div>
-            <div class="row d-flex justify-content-center appointment-row-card-button-mobile">
+            <div class="row d-flex justify-content-center mobile-appointment-card-button">
                 <div class="mb-md-2">
                     <button id="submit-button" class="w-100">
                         Maak afspraak <i class="fas fa-check ml-md-1"></i>
