@@ -12,21 +12,25 @@ namespace WebshopBouidi.Controllers
         // GET: Appointment
         public ActionResult Index()
         {
+            ViewModel vm = new ViewModel();
             AppointmentModel appointmentModel = new AppointmentModel();
-            return View(appointmentModel);
+            DateTimeModel dateTimeModel = new DateTimeModel();
+            vm.AppointmentModel = appointmentModel;
+            vm.DateTimeModel = dateTimeModel;
+            return View(vm);
         }
 
         //POST: Appointment
         [HttpPost]
-        public async Task<ActionResult> Create(AppointmentModel appointment)
+        public async Task<ActionResult> Create(ViewModel appointment)
         {
             if (ModelState.IsValid)
             {
-                var body = $"<p>Beste {appointment.CustomerName}, </p><p>Uw afspraak voor {appointment.AppointmentDate.ToString("g")} is succesvol vastgesteld. Gelieve zeker een mondmasker mee te nemen en 15 minuten op voorhand aan te komen op locatie!</p><br/><p>Met vriendelijke groet,</p><br/><p>Kapper Bouidi</p>";
+                var body = $"<p>Beste {appointment.AppointmentModel.CustomerName}, </p><p>Uw afspraak voor {appointment.AppointmentModel.AppointmentDate} is succesvol vastgesteld. Gelieve zeker een mondmasker mee te nemen en 15 minuten op voorhand aan te komen op locatie!</p><br/><p>Met vriendelijke groet,</p><br/><p>Kapper Bouidi</p>";
                 var message = new MailMessage();
-                message.To.Add(new MailAddress(appointment.Email));
+                message.To.Add(new MailAddress(appointment.AppointmentModel.Email));
                 message.From = new MailAddress("testmail.bouidi@gmail.com");
-                message.Subject = $"Afspraak bevestiging {appointment.AppointmentDate.ToString("g")}";
+                message.Subject = $"Afspraak bevestiging {appointment.AppointmentModel.AppointmentDate}";
                 message.Body = string.Format(body);
                 message.IsBodyHtml = true;
 
@@ -36,7 +40,11 @@ namespace WebshopBouidi.Controllers
                     smtp.Credentials = new NetworkCredential(System.Configuration.ConfigurationManager.AppSettings["FromEmail"], System.Configuration.ConfigurationManager.AppSettings["FromPassword"]);
                     smtp.EnableSsl = true;
                     await smtp.SendMailAsync(message);
-                    AppointmentBAL.CreateAppointment(appointment);
+
+                    //Concatenate chosen appointment date & time together
+                    string finalDate = $"{appointment.AppointmentModel.AppointmentDate} - {appointment.ChosenAppointmentTime}";
+                    appointment.AppointmentModel.AppointmentDate = finalDate;
+                    AppointmentBAL.CreateAppointment(appointment.AppointmentModel); //STOPPED HERE BECAUSE CANNOT RUN MIGRATION BECAUSE AZURE CREDENTIALS (AUTH) NOT LETTING ME IN
                     return RedirectToAction("Index", "Appointment");
                 }
             }

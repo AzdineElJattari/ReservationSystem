@@ -124,24 +124,7 @@ body {
     text-align: center;
 }
 
-#submit-button {
-    padding: 20px;
-    text-align: center;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;
-    box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
-    background-image: linear-gradient(to right, #f6d365 0%, #ffa700 51%, #f6d365 100%);
-    border: 0px;
-}
-
-#submit-button:hover {
-  background-position: right center;
-}
-
 /*Mobile*/
-
 @media (max-width: 768px) {
     .col-appointment-mobile {
         margin-top: 20%;

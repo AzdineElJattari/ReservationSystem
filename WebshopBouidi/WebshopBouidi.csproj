@@ -303,11 +303,16 @@
     <Compile Include="Migrations\202105152227074_ChangeInCreationDateOfContactModel.Designer.cs">
       <DependentUpon>202105152227074_ChangeInCreationDateOfContactModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105240005173_ChangeAppointmentDatePropToString.cs" />
+    <Compile Include="Migrations\202105240005173_ChangeAppointmentDatePropToString.Designer.cs">
+      <DependentUpon>202105240005173_ChangeAppointmentDatePropToString.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppointmentModel.cs" />
     <Compile Include="Models\ContactModel.cs" />
     <Compile Include="Models\DateTimeModel.cs" />
-    <Compile Include="Models\ParentViewModel.cs" />
+    <Compile Include="Models\SelectType.cs" />
+    <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -401,6 +406,7 @@
     <Content Include="Views\Appointment\Index.cshtml" />
     <Content Include="Views\Appointment\Create.cshtml" />
     <Content Include="Views\Contact\Create.cshtml" />
+    <Content Include="Views\Shared\Partial\Modal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -454,6 +460,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105152227074_ChangeInCreationDateOfContactModel.resx">
       <DependentUpon>202105152227074_ChangeInCreationDateOfContactModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105240005173_ChangeAppointmentDatePropToString.resx">
+      <DependentUpon>202105240005173_ChangeAppointmentDatePropToString.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

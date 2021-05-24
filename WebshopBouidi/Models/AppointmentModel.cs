@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebshopBouidi.Models
@@ -26,7 +25,7 @@ namespace WebshopBouidi.Models
         public string MobileNumber { get; set; }
 
         [Required(ErrorMessage = "Datum afspraak is verplicht")]
-        public DateTime AppointmentDate { get; set; }
+        public string AppointmentDate { get; set; } //Changed from DateTime to String
 
         [MaxLength]
         public string Message { get; set; }

@@ -38,6 +38,7 @@
             </div>
         </div>
     </nav>
+    @Html.Partial("~/Views/Shared/Partial/Modal.cshtml")
     @RenderBody()
     <button class="scrollToTopBtn">☝️</button>
     <!-- Footer-->
@@ -63,7 +64,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-6 px-4 col-footer-mob"">
+                        <div class="col-md-6 px-4 col-footer-mob" ">
                             <h6> Pagina's</h6>
                             <div class="row ">
                                 <div class="col-md-6">
@@ -111,10 +112,16 @@
     </script>
     <script>
         $('#resultLoading').hide();
-        $("#submit-button").click(function () {
-            $('#submit-button').hide();
-            $('#resultLoading').show();
+
+        $("#submit-button").click(function () { /*LOOK TO FIX MODAL WORKING WITH MODELVALIDATION*/
+            if (!$("#customername").val()) {
+                $("#myModal").modal('show');
+            } else {
+                $('#submit-button').hide();
+                $('#resultLoading').show();
+            }
         });
+
         $("#contact-submit-button").click(function () {
             $('#contact-submit-button').hide();
             $('#resultLoading').show();
