@@ -2503,7 +2503,7 @@ textarea.form-control {
 }
 
 .btn:hover {
-    color: #212529;
+    color: #212529 !important;
     text-decoration: none;
 }
 
@@ -10880,7 +10880,6 @@ footer ul  li a{
 }
 a:hover {
     text-decoration: none;
-    color: #FF8C00 !important;
 }
 .logo-part {
     border-right: 1px solid grey;

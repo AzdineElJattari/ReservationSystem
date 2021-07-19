@@ -35,7 +35,7 @@
                    htmlAttributes = new { type = "date", required = "required", id = "appointmentdate" },
                    @class = "border-0 p-0 font-14 form-control",
                    @value = DateTime.Now.ToString()
-               });
+               })
                     @Html.ValidationMessageFor(model => model.AppointmentModel.AppointmentDate, "", new { @class = "text-danger" })
                     @Html.DropDownListFor(m => m.ChosenAppointmentTime, new SelectList(Model.DateTimeModel.OpeningTimes, "Value", "Text"), new { @style = "margin-left: 10px;" })
                 </div>
