@@ -311,6 +311,10 @@
     <Compile Include="Migrations\202107241335238_AddedAppointmentTimeColumn.Designer.cs">
       <DependentUpon>202107241335238_AddedAppointmentTimeColumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107241400255_AddedErrorMessageCheckForAppointmentTime.cs" />
+    <Compile Include="Migrations\202107241400255_AddedErrorMessageCheckForAppointmentTime.Designer.cs">
+      <DependentUpon>202107241400255_AddedErrorMessageCheckForAppointmentTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppointmentModel.cs" />
     <Compile Include="Models\ContactModel.cs" />
@@ -470,6 +474,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107241335238_AddedAppointmentTimeColumn.resx">
       <DependentUpon>202107241335238_AddedAppointmentTimeColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107241400255_AddedErrorMessageCheckForAppointmentTime.resx">
+      <DependentUpon>202107241400255_AddedErrorMessageCheckForAppointmentTime.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

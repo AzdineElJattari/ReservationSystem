@@ -24,11 +24,9 @@ namespace WebshopBouidi.Controllers
         [HttpPost]
         public async Task<ActionResult> Create(ViewModel appointment)
         {
-            string finalDate = $"{appointment.AppointmentModel.AppointmentDate} - {appointment.ChosenAppointmentTime}";
-
             if (ModelState.IsValid)
             {
-                var body = $"<p>Beste {appointment.AppointmentModel.CustomerName}, </p><p>Uw afspraak voor {appointment.AppointmentModel.AppointmentDate} om {appointment.ChosenAppointmentTime} is succesvol vastgesteld. Gelieve zeker een mondmasker mee te nemen en 15 minuten op voorhand aan te komen op locatie!</p><br/><p>Met vriendelijke groet,</p><br/><p>Kapper Bouidi</p>";
+                var body = $"<p>Beste {appointment.AppointmentModel.CustomerName}, </p><p>Uw afspraak voor {appointment.AppointmentModel.AppointmentDate} om {appointment.AppointmentModel.AppointmentTime} is succesvol vastgesteld. Gelieve zeker een mondmasker mee te nemen en 15 minuten op voorhand aan te komen op locatie!</p><br/><p>Met vriendelijke groet,</p><br/><p>Kapper Bouidi</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(appointment.AppointmentModel.Email));
                 message.From = new MailAddress("testmail.bouidi@gmail.com");
@@ -43,8 +41,6 @@ namespace WebshopBouidi.Controllers
                     smtp.EnableSsl = true;
                     await smtp.SendMailAsync(message);
 
-                    //Concatenate chosen appointment date & time together
-                    appointment.AppointmentModel.AppointmentDate = finalDate;
                     AppointmentBAL.CreateAppointment(appointment.AppointmentModel);
                     return RedirectToAction("Index", "Appointment");
                 }
