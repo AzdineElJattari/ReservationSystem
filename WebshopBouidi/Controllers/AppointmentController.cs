@@ -24,13 +24,15 @@ namespace WebshopBouidi.Controllers
         [HttpPost]
         public async Task<ActionResult> Create(ViewModel appointment)
         {
+            string finalDate = $"{appointment.AppointmentModel.AppointmentDate} - {appointment.ChosenAppointmentTime}";
+
             if (ModelState.IsValid)
             {
-                var body = $"<p>Beste {appointment.AppointmentModel.CustomerName}, </p><p>Uw afspraak voor {appointment.AppointmentModel.AppointmentDate} is succesvol vastgesteld. Gelieve zeker een mondmasker mee te nemen en 15 minuten op voorhand aan te komen op locatie!</p><br/><p>Met vriendelijke groet,</p><br/><p>Kapper Bouidi</p>";
+                var body = $"<p>Beste {appointment.AppointmentModel.CustomerName}, </p><p>Uw afspraak voor {appointment.AppointmentModel.AppointmentDate} om {appointment.ChosenAppointmentTime} is succesvol vastgesteld. Gelieve zeker een mondmasker mee te nemen en 15 minuten op voorhand aan te komen op locatie!</p><br/><p>Met vriendelijke groet,</p><br/><p>Kapper Bouidi</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(appointment.AppointmentModel.Email));
                 message.From = new MailAddress("testmail.bouidi@gmail.com");
-                message.Subject = $"Afspraak bevestiging {appointment.AppointmentModel.AppointmentDate}";
+                message.Subject = $"Bevestiging afspraak - {appointment.AppointmentModel.AppointmentDate}";
                 message.Body = string.Format(body);
                 message.IsBodyHtml = true;
 
@@ -42,9 +44,8 @@ namespace WebshopBouidi.Controllers
                     await smtp.SendMailAsync(message);
 
                     //Concatenate chosen appointment date & time together
-                    string finalDate = $"{appointment.AppointmentModel.AppointmentDate} - {appointment.ChosenAppointmentTime}";
                     appointment.AppointmentModel.AppointmentDate = finalDate;
-                    AppointmentBAL.CreateAppointment(appointment.AppointmentModel); //STOPPED HERE BECAUSE CANNOT RUN MIGRATION BECAUSE AZURE CREDENTIALS (AUTH) NOT LETTING ME IN
+                    AppointmentBAL.CreateAppointment(appointment.AppointmentModel);
                     return RedirectToAction("Index", "Appointment");
                 }
             }

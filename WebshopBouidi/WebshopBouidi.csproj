@@ -307,11 +307,15 @@
     <Compile Include="Migrations\202105240005173_ChangeAppointmentDatePropToString.Designer.cs">
       <DependentUpon>202105240005173_ChangeAppointmentDatePropToString.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107241335238_AddedAppointmentTimeColumn.cs" />
+    <Compile Include="Migrations\202107241335238_AddedAppointmentTimeColumn.Designer.cs">
+      <DependentUpon>202107241335238_AddedAppointmentTimeColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppointmentModel.cs" />
     <Compile Include="Models\ContactModel.cs" />
     <Compile Include="Models\DateTimeModel.cs" />
-    <Compile Include="Models\SelectType.cs" />
+    <Compile Include="Models\SelectListItem.cs" />
     <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -463,6 +467,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105240005173_ChangeAppointmentDatePropToString.resx">
       <DependentUpon>202105240005173_ChangeAppointmentDatePropToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107241335238_AddedAppointmentTimeColumn.resx">
+      <DependentUpon>202107241335238_AddedAppointmentTimeColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

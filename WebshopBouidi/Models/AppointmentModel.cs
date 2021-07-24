@@ -25,7 +25,10 @@ namespace WebshopBouidi.Models
         public string MobileNumber { get; set; }
 
         [Required(ErrorMessage = "Datum afspraak is verplicht")]
-        public string AppointmentDate { get; set; } //Changed from DateTime to String
+        public string AppointmentDate { get; set; }
+
+        [Required(ErrorMessage = "Tijd afspraak is verplicht")]
+        public string AppointmentTime { get; set; }
 
         [MaxLength]
         public string Message { get; set; }
