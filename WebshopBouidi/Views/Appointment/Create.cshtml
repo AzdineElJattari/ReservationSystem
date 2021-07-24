@@ -37,7 +37,7 @@
                    @value = DateTime.Now.ToString()
                })
                     @Html.ValidationMessageFor(model => model.AppointmentModel.AppointmentDate, "", new { @class = "text-danger" })
-                    @Html.DropDownListFor(m => m.AppointmentModel.AppointmentTime, new SelectList(Model.DateTimeModel.OpeningTimes, "Value", "Text"), new { @style = "margin-left: 10px;" })
+                    @Html.DropDownListFor(m => m.ChosenAppointmentTime, new SelectList(Model.DateTimeModel.OpeningTimes, "Value", "Text"), new { @style = "margin-left: 10px;" })
                 </div>
             </div>
             <div class="form-row border-bottom p-4">
@@ -56,3 +56,25 @@
         }
     </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+    var chosenValue;
+    $("#appointmentdate").change(function () {
+        chosenValue = $("#appointmentdate").val();
+        sessionStorage.setItem("key", chosenValue);
+        location.reload();
+    });
+    $.ajax({
+        url: '@Url.Action("Index", "AppointmentController")',
+        data: { 'chosenDate': sessionStorage.getItem("key") },
+        type: "GET",
+        success: function (data) {
+            console.log("CORRECT"); //Hier gestopt!!!
+        },
+        error: function (passParams) {
+            console.log("ERROR");
+        }
+    });
+    $("#appointmentdate").val(sessionStorage.getItem("key"));
+</script>

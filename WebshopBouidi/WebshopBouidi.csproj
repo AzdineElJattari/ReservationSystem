@@ -315,6 +315,14 @@
     <Compile Include="Migrations\202107241400255_AddedErrorMessageCheckForAppointmentTime.Designer.cs">
       <DependentUpon>202107241400255_AddedErrorMessageCheckForAppointmentTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107241456122_init2.cs" />
+    <Compile Include="Migrations\202107241456122_init2.Designer.cs">
+      <DependentUpon>202107241456122_init2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107241508455_BugFixMigration.cs" />
+    <Compile Include="Migrations\202107241508455_BugFixMigration.Designer.cs">
+      <DependentUpon>202107241508455_BugFixMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppointmentModel.cs" />
     <Compile Include="Models\ContactModel.cs" />
@@ -477,6 +485,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107241400255_AddedErrorMessageCheckForAppointmentTime.resx">
       <DependentUpon>202107241400255_AddedErrorMessageCheckForAppointmentTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107241456122_init2.resx">
+      <DependentUpon>202107241456122_init2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107241508455_BugFixMigration.resx">
+      <DependentUpon>202107241508455_BugFixMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
