@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
@@ -11,20 +12,22 @@ namespace WebshopBouidi.Controllers
 {
     public class AppointmentController : Controller
     {
+        private List<object> ListOfAppointments { get; set; }
 
         // GET: Appointment
-        public ActionResult Index(string chosenDate)
+        public ActionResult Index()
         {
             ViewModel vm = new ViewModel();
             AppointmentModel appointmentModel = new AppointmentModel();
             DateTimeModel dateTimeModel = new DateTimeModel();
-            _ = chosenDate;
-            //Appointment date + time control on page load
+
             using (var dbContext = new ProjectContext())
             {
                 var appointmentsList = dbContext.Appointments.ToList();
                 foreach (var x in appointmentsList)
                 {
+
+                    ListOfAppointments.Append(x);
                 }
             }
 
@@ -32,6 +35,14 @@ namespace WebshopBouidi.Controllers
             vm.DateTimeModel = dateTimeModel;
 
             return View(vm);
+        }
+
+        //POST: Get selected date for Appointment
+        [HttpPost]
+        public ActionResult SetSelectedDate(string date)
+        {
+            var result = date != null ? Content("Responsecode: 200 OK") : Content("Responsecode: 404 ERROR");
+            return result;
         }
 
         //POST: Appointment
