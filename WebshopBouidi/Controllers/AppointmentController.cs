@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -13,26 +14,26 @@ namespace WebshopBouidi.Controllers
     public class AppointmentController : Controller
     {
         private static List<string> ListOfAppointmentDates { get; set; }
-        private static List<string> ListOfDateTimesToRemove { get; set; }
         private static string OldSelectedDate { get; set; }
-        public ViewModel vm { get; set; } = new ViewModel();
+        private ViewModel vm { get; set; } = new ViewModel();
 
         // GET: Appointment
         public ActionResult Index()
         {
             AppointmentModel appointmentModel = new AppointmentModel();
             DateTimeModel dateTimeModel = new DateTimeModel();
-            AppointmentTimeStatic.Times.ToList().RemoveAt(5);
-
             using (var dbContext = new ProjectContext())
             {
                 ListOfAppointmentDates = dbContext.Appointments.Select(x => x.AppointmentDate).ToList();
-                //var datum = ListOfAppointmentDates[0].Substring(0, 10);
-                //var tijd = ListOfAppointmentDates[0].Substring(13, 5);
             }
-
             vm.AppointmentModel = appointmentModel;
             vm.DateTimeModel = dateTimeModel;
+
+            if (OldSelectedDate == null)
+            {
+                AppointmentTimeStatic.FindTimesAndRemove(ListOfAppointmentDates, DateTime.Now.ToString("yyyy/MM/dd"));
+                OldSelectedDate = DateTime.Now.ToString("yyyy/MM/dd");
+            }
             return View(vm);
         }
 
@@ -42,22 +43,16 @@ namespace WebshopBouidi.Controllers
         {
             var result = date != null ? Content("Responsecode: 200 OK") : Content("Responsecode: 404 ERROR");
             string formattedDate = date.Replace("-", "/");
-            if (OldSelectedDate == null)
-            {
-                OldSelectedDate = date;
-            }
-            else if (OldSelectedDate != date)
+            if (OldSelectedDate != date)
             {
                 AppointmentTimeStatic.ResetTimeList();
                 OldSelectedDate = date;
             }
-            var listOfSelectedDateWithTime = ListOfAppointmentDates.Where(x => x.Contains(formattedDate)).ToList();
-
-            for (int i = 0; i < listOfSelectedDateWithTime.Count; i++)
+            else
             {
-                AppointmentTimeStatic.DisableTime(listOfSelectedDateWithTime[i].Substring(13, 5));
+                OldSelectedDate = date;
             }
-
+            AppointmentTimeStatic.FindTimesAndRemove(ListOfAppointmentDates, formattedDate);
             return result;
         }
 
@@ -87,6 +82,7 @@ namespace WebshopBouidi.Controllers
                     //Concatenate chosen appointment date & time together
                     appointment.AppointmentModel.AppointmentDate = finalDate;
                     AppointmentBAL.CreateAppointment(appointment.AppointmentModel);
+                    ViewBag.Saved = "Saved";
                     return RedirectToAction("Index", "Appointment");
                 }
             }

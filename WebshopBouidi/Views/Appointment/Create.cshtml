@@ -1,4 +1,14 @@
 ﻿@model WebshopBouidi.Models.ViewModel
+@section Scripts {
+    @if (ViewBag.Saved != null)
+    {
+        <script>
+            $(function () {
+                $("#exampleModal").modal("show");
+            });
+        </script>
+    }
+}
 
 <div class="container">
     <div class="">
@@ -44,7 +54,7 @@
             </div>
             <div class="row d-flex justify-content-center mobile-appointment-card-button">
                 <div class="mb-md-2">
-                    <button type="submit" class="btn btn-warning w-100" id="submit-button"><i class="fas fa-check ml-md-1"></i> Maak afspraak</button>
+                    <button type="submit" class="btn btn-warning w-100" id="submit-button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-check ml-md-1"></i> Maak afspraak</button>
                     <button class="btn btn-warning w-100" id="resultLoading" type="submit" disabled>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         Loading...
@@ -53,28 +63,6 @@
             </div>
         }
     </div>
-    @if (Model.AppointmentModel.MobileNumber != null)
-    {
-        @:<div class="modal" tabindex="-1" role="dialog">
-            @:<div class="modal-dialog" role="document">
-                @:<div class="modal-content">
-                    @:<div class="modal-header">
-                        @:<h5 class="modal-title">Modal title</h5>
-                        @:<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            @:<span aria-hidden="true">&times;</span>
-                        @:</button>
-                    @:</div>
-                    @:<div class="modal-body">
-                        @:<p>Modal body text goes here.</p>
-                    @:</div>
-                    @:<div class="modal-footer">
-                        @:<button type="button" class="btn btn-primary">Save changes</button>
-                        @:<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    @:</div>
-                @:</div>
-            @: </div>
-        @:</div>
-    }
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

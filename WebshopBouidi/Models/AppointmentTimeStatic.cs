@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace WebshopBouidi.Models
 {
@@ -31,9 +32,14 @@ namespace WebshopBouidi.Models
             }
         }
 
-        public static void DisableTime(string timeToDisable)
+        public static void FindTimesAndRemove(List<string> listToCheck, string dateToInspect)
         {
-            times.RemoveAll(x => x.Text == timeToDisable);
+            var listOfSelectedDateWithTime = listToCheck.Where(x => x.Contains(dateToInspect)).ToList();
+
+            for (int i = 0; i < listOfSelectedDateWithTime.Count; i++)
+            {
+                times.RemoveAll(x => x.Text == listOfSelectedDateWithTime[i].Substring(13, 5));
+            }
         }
 
         public static void ResetTimeList()
