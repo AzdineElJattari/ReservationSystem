@@ -32,9 +32,7 @@
                 <div class="input-group date">
                     @Html.EditorFor(m => m.AppointmentModel.AppointmentDate, new
                {
-                   htmlAttributes = new { type = "date", required = "required", id = "appointmentdate" },
-                   @class = "border-0 p-0 font-14 form-control",
-                   @value = DateTime.Now.ToString()
+                   htmlAttributes = new { @class = "border-0 p-0 font-14 form-control", type = "text", id = "appointmentdate" }
                })
                     @Html.ValidationMessageFor(model => model.AppointmentModel.AppointmentDate, "", new { @class = "text-danger" })
                     @Html.DropDownListFor(m => m.ChosenAppointmentTime, new SelectList(Model.DateTimeModel.OpeningTimes, "Value", "Text"), new { @style = "margin-left: 10px;", @id = "appointmenttime" })
@@ -42,7 +40,7 @@
             </div>
             <div class="form-row border-bottom p-4">
                 <label class="text-inverse font-12 text-uppercase">Bericht</label>
-                @Html.TextAreaFor(m => m.AppointmentModel.Message, new { @class = "border-0 p-0 font-weight-light font-14 form-control", @style = "max-height: 100px;", placeholder = "Typ hier uw bericht", col = "1", row = "1" })
+                @Html.TextAreaFor(m => m.AppointmentModel.Message, new { @class = "border-0 p-0 font-weight-light font-14 form-control", id = "message", @style = "max-height: 100px;", placeholder = "Typ hier uw bericht", col = "1", row = "1" })
             </div>
             <div class="row d-flex justify-content-center mobile-appointment-card-button">
                 <div class="mb-md-2">
@@ -55,21 +53,53 @@
             </div>
         }
     </div>
+    @if (Model.AppointmentModel.MobileNumber != null)
+    {
+        @:<div class="modal" tabindex="-1" role="dialog">
+            @:<div class="modal-dialog" role="document">
+                @:<div class="modal-content">
+                    @:<div class="modal-header">
+                        @:<h5 class="modal-title">Modal title</h5>
+                        @:<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            @:<span aria-hidden="true">&times;</span>
+                        @:</button>
+                    @:</div>
+                    @:<div class="modal-body">
+                        @:<p>Modal body text goes here.</p>
+                    @:</div>
+                    @:<div class="modal-footer">
+                        @:<button type="button" class="btn btn-primary">Save changes</button>
+                        @:<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    @:</div>
+                @:</div>
+            @: </div>
+        @:</div>
+    }
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript">
-    @*var chosenValue;
-    $("#appointmentdate").change(function () {
-        chosenValue = $("#appointmentdate").val();
-        sessionStorage.setItem("key", chosenValue);
-        location.reload();
-    });*@
 
-    $("#appointmenttime").prop("disabled", true);
+    var dateChange = false;
+    $("#appointmentdate").datepicker({ minDate: 0, dateFormat: "yy/mm/dd" }).datepicker("setDate", new Date());
 
-    $("#appointmentdate").on("change", function () {
+    $('#appointmentdate').change(function () {
+        dateChange = true;
         var selectedDate = $("#appointmentdate").val();
+        var customerName = $("#customername").val();
+        var customerLastName = $("#customerlastname").val();
+        var email = $("#email").val();
+        var mobileNumber = $("#mobilenumber").val();
+        var message = $("#message").val();
+
+        sessionStorage.setItem("date", selectedDate);
+        sessionStorage.setItem("dateChange", dateChange);
+        sessionStorage.setItem("customerName", customerName);
+        sessionStorage.setItem("customerLastName", customerLastName);
+        sessionStorage.setItem("email", email);
+        sessionStorage.setItem("mobileNumber", mobileNumber);
+        sessionStorage.setItem("message", message);
 
         $.ajax({
             url: "/Appointment/SetSelectedDate",
@@ -83,7 +113,16 @@
                 console.log("ERROR");
             }
         });
-
-        $("#appointmenttime").prop("disabled", false);
+        location.reload();
     });
+
+    if (sessionStorage.getItem("dateChange")) {
+        $('#customername').val(sessionStorage.getItem("customerName"));
+        $('#customerlastname').val(sessionStorage.getItem("customerLastName"));
+        $('#email').val(sessionStorage.getItem("email"));
+        $('#mobilenumber').val(sessionStorage.getItem("mobileNumber"));
+        $('#message').val(sessionStorage.getItem("message"));
+        $("#appointmentdate").datepicker({ minDate: 0, dateFormat: "yy/mm/dd" }).datepicker("setDate", sessionStorage.getItem("date"));
+    }
+
 </script>

@@ -325,6 +325,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AppointmentModel.cs" />
+    <Compile Include="Models\AppointmentTimeStatic.cs" />
     <Compile Include="Models\ContactModel.cs" />
     <Compile Include="Models\DateTimeModel.cs" />
     <Compile Include="Models\SelectListItem.cs" />

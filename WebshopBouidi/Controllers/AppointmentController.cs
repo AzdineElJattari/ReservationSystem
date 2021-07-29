@@ -12,28 +12,27 @@ namespace WebshopBouidi.Controllers
 {
     public class AppointmentController : Controller
     {
-        private List<object> ListOfAppointments { get; set; }
+        private static List<string> ListOfAppointmentDates { get; set; }
+        private static List<string> ListOfDateTimesToRemove { get; set; }
+        private static string OldSelectedDate { get; set; }
+        public ViewModel vm { get; set; } = new ViewModel();
 
         // GET: Appointment
         public ActionResult Index()
         {
-            ViewModel vm = new ViewModel();
             AppointmentModel appointmentModel = new AppointmentModel();
             DateTimeModel dateTimeModel = new DateTimeModel();
+            AppointmentTimeStatic.Times.ToList().RemoveAt(5);
 
             using (var dbContext = new ProjectContext())
             {
-                var appointmentsList = dbContext.Appointments.ToList();
-                foreach (var x in appointmentsList)
-                {
-
-                    ListOfAppointments.Append(x);
-                }
+                ListOfAppointmentDates = dbContext.Appointments.Select(x => x.AppointmentDate).ToList();
+                //var datum = ListOfAppointmentDates[0].Substring(0, 10);
+                //var tijd = ListOfAppointmentDates[0].Substring(13, 5);
             }
 
             vm.AppointmentModel = appointmentModel;
             vm.DateTimeModel = dateTimeModel;
-
             return View(vm);
         }
 
@@ -42,6 +41,23 @@ namespace WebshopBouidi.Controllers
         public ActionResult SetSelectedDate(string date)
         {
             var result = date != null ? Content("Responsecode: 200 OK") : Content("Responsecode: 404 ERROR");
+            string formattedDate = date.Replace("-", "/");
+            if (OldSelectedDate == null)
+            {
+                OldSelectedDate = date;
+            }
+            else if (OldSelectedDate != date)
+            {
+                AppointmentTimeStatic.ResetTimeList();
+                OldSelectedDate = date;
+            }
+            var listOfSelectedDateWithTime = ListOfAppointmentDates.Where(x => x.Contains(formattedDate)).ToList();
+
+            for (int i = 0; i < listOfSelectedDateWithTime.Count; i++)
+            {
+                AppointmentTimeStatic.DisableTime(listOfSelectedDateWithTime[i].Substring(13, 5));
+            }
+
             return result;
         }
 
