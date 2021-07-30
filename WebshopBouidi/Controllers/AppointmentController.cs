@@ -83,7 +83,9 @@ namespace WebshopBouidi.Controllers
                     appointment.AppointmentModel.AppointmentDate = finalDate;
                     AppointmentBAL.CreateAppointment(appointment.AppointmentModel);
                     ViewBag.Saved = "Saved";
-                    return RedirectToAction("Index", "Appointment");
+                    await Task.Delay(2000);
+                    //AppointmentTimeStatic.FindTimesAndRemove(ListOfAppointmentDates, OldSelectedDate); HIER GEBLEVEN EN WERKT NIET!!!
+                    return RedirectToAction("Home", "Home");
                 }
             }
             return PartialView("Index", appointment);

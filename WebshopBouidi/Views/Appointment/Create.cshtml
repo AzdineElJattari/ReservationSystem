@@ -113,4 +113,8 @@
         $("#appointmentdate").datepicker({ minDate: 0, dateFormat: "yy/mm/dd" }).datepicker("setDate", sessionStorage.getItem("date"));
     }
 
+    $('#submit-button').click(function () {
+        sessionStorage.clear();
+    })
+
 </script>
