@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using WebshopBouidi.Models;
 
 namespace WebshopBouidi.DAL.Appointment
@@ -6,6 +7,12 @@ namespace WebshopBouidi.DAL.Appointment
     public class AppointmentDAL
     {
         private ProjectContext context { get; } = new ProjectContext();
+
+        public List<AppointmentModel> Get()
+        {
+            List<AppointmentModel> list = context.Appointments.ToList();
+            return list;
+        }
 
         public void Create(AppointmentModel appointment)
         {

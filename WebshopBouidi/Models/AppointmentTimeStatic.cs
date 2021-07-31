@@ -38,7 +38,7 @@ namespace WebshopBouidi.Models
 
             for (int i = 0; i < listOfSelectedDateWithTime.Count; i++)
             {
-                times.RemoveAll(x => x.Text == listOfSelectedDateWithTime[i].Substring(13, 5));
+                if (listOfSelectedDateWithTime[i] != null) times.RemoveAll(x => x.Text == listOfSelectedDateWithTime[i].Substring(13, 5));
             }
         }
 

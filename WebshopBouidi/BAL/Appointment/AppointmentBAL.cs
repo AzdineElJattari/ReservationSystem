@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using WebshopBouidi.DAL.Appointment;
 using WebshopBouidi.Models;
 
@@ -7,6 +8,11 @@ namespace WebshopBouidi.BAL.Appointment
     public static class AppointmentBAL
     {
         private static AppointmentDAL AppointmentDAL { get; } = new AppointmentDAL();
+
+        public static List<AppointmentModel> GetAppointments()
+        {
+            return AppointmentDAL.Get();
+        }
         public static void CreateAppointment(AppointmentModel appointment)
         {
             try

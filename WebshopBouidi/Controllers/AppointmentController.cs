@@ -18,16 +18,12 @@ namespace WebshopBouidi.Controllers
         private ViewModel vm { get; set; } = new ViewModel();
 
         // GET: Appointment
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            AppointmentModel appointmentModel = new AppointmentModel();
-            DateTimeModel dateTimeModel = new DateTimeModel();
             using (var dbContext = new ProjectContext())
             {
-                ListOfAppointmentDates = dbContext.Appointments.Select(x => x.AppointmentDate).ToList();
+                await Task.Run(() => ListOfAppointmentDates = AppointmentBAL.GetAppointments().Select(x => x.AppointmentDate).ToList());
             }
-            vm.AppointmentModel = appointmentModel;
-            vm.DateTimeModel = dateTimeModel;
 
             if (OldSelectedDate == null)
             {
@@ -39,20 +35,21 @@ namespace WebshopBouidi.Controllers
 
         //POST: Get selected date for Appointment
         [HttpPost]
-        public ActionResult SetSelectedDate(string date)
+        public async Task<ActionResult> SetSelectedDate(string date)
         {
             var result = date != null ? Content("Responsecode: 200 OK") : Content("Responsecode: 404 ERROR");
             string formattedDate = date.Replace("-", "/");
-            if (OldSelectedDate != date)
+
+            if (OldSelectedDate != formattedDate)
             {
-                AppointmentTimeStatic.ResetTimeList();
+                await Task.Run(() => AppointmentTimeStatic.ResetTimeList());
+                await Task.Run(() => AppointmentTimeStatic.FindTimesAndRemove(ListOfAppointmentDates, formattedDate));
                 OldSelectedDate = date;
             }
             else
             {
-                OldSelectedDate = date;
+                await Task.Run(() => AppointmentTimeStatic.FindTimesAndRemove(ListOfAppointmentDates, formattedDate));
             }
-            AppointmentTimeStatic.FindTimesAndRemove(ListOfAppointmentDates, formattedDate);
             return result;
         }
 
@@ -60,11 +57,24 @@ namespace WebshopBouidi.Controllers
         [HttpPost]
         public async Task<ActionResult> Create(ViewModel appointment)
         {
-            string finalDate = $"{appointment.AppointmentModel.AppointmentDate} - {appointment.ChosenAppointmentTime}";
+            string time;
+
+            if (appointment.ChosenAppointmentTime == null)
+            {
+                time = appointment.DateTimeModel.OpeningTimes.ToList()[0].Text;
+            }
+            else
+            {
+                time = appointment.ChosenAppointmentTime;
+            }
+
+            _ = time;
+            //Concatenate chosen appointment date & time together
+            string finalDate = $"{appointment.AppointmentModel.AppointmentDate} - {time}";
 
             if (ModelState.IsValid)
             {
-                var body = $"<p>Beste {appointment.AppointmentModel.CustomerName}, </p><p>Uw afspraak voor {appointment.AppointmentModel.AppointmentDate} om {appointment.ChosenAppointmentTime} is succesvol vastgesteld. Gelieve zeker een mondmasker mee te nemen en 15 minuten op voorhand aan te komen op locatie!</p><br/><p>Met vriendelijke groet,</p><br/><p>Kapper Bouidi</p>";
+                var body = $"<p>Beste {appointment.AppointmentModel.CustomerName}, </p><p>Uw afspraak voor {appointment.AppointmentModel.AppointmentDate} om {time} is succesvol vastgesteld. Gelieve zeker een mondmasker mee te nemen en 15 minuten op voorhand aan te komen op locatie!</p><br/><p>Met vriendelijke groet,</p><br/><p>Kapper Bouidi</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress(appointment.AppointmentModel.Email));
                 message.From = new MailAddress("testmail.bouidi@gmail.com");
@@ -79,16 +89,17 @@ namespace WebshopBouidi.Controllers
                     smtp.EnableSsl = true;
                     await smtp.SendMailAsync(message);
 
-                    //Concatenate chosen appointment date & time together
                     appointment.AppointmentModel.AppointmentDate = finalDate;
-                    AppointmentBAL.CreateAppointment(appointment.AppointmentModel);
+                    await Task.Run(() => AppointmentBAL.CreateAppointment(appointment.AppointmentModel));
+                    await Task.Run(() => AppointmentTimeStatic.FindTimesAndRemove(ListOfAppointmentDates, OldSelectedDate));
+                    _ = appointment;
+                    _ = vm;
                     ViewBag.Saved = "Saved";
-                    await Task.Delay(2000);
-                    //AppointmentTimeStatic.FindTimesAndRemove(ListOfAppointmentDates, OldSelectedDate); HIER GEBLEVEN EN WERKT NIET!!!
-                    return RedirectToAction("Home", "Home");
+                    //return RedirectToAction("Home", "Home");
                 }
             }
-            return PartialView("Index", appointment);
+            return RedirectToAction("Home", "Home");
+            //return View("~/Views/Appointment/Index.cshtml");
         }
     }
 }
