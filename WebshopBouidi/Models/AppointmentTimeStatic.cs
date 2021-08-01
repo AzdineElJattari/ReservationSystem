@@ -31,17 +31,15 @@ namespace WebshopBouidi.Models
                 return times;
             }
         }
-
         public static void FindTimesAndRemove(List<string> listToCheck, string dateToInspect)
         {
             var listOfSelectedDateWithTime = listToCheck.Where(x => x.Contains(dateToInspect)).ToList();
 
             for (int i = 0; i < listOfSelectedDateWithTime.Count; i++)
             {
-                if (listOfSelectedDateWithTime[i] != null) times.RemoveAll(x => x.Text == listOfSelectedDateWithTime[i].Substring(13, 5));
+                times.RemoveAll(x => x.Text == listOfSelectedDateWithTime[i].Substring(13, 5));
             }
         }
-
         public static void ResetTimeList()
         {
             times = new List<System.Web.Mvc.SelectListItem>

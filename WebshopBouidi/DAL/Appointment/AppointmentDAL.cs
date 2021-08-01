@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using WebshopBouidi.Models;
 
@@ -10,8 +12,16 @@ namespace WebshopBouidi.DAL.Appointment
 
         public List<AppointmentModel> Get()
         {
-            List<AppointmentModel> list = context.Appointments.ToList();
-            return list;
+            List<AppointmentModel> list = new List<AppointmentModel>();
+            try
+            {
+                list = context.Appointments.ToList();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            return list.ToList();
         }
 
         public void Create(AppointmentModel appointment)

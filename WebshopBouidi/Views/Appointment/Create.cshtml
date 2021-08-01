@@ -18,39 +18,44 @@
             <div class="form-row border-bottom">
                 <div class="p-4 left border-right w-50">
                     <label class="text-inverse font-12 text-uppercase">Voornaam*</label>
-                    @Html.TextBoxFor(m => m.AppointmentModel.CustomerName, new { @class = "border-0 p-0 font-14 form-control", id = "customername", type = "text", placeholder = "Uw voornaam" })
+                    @Html.TextBoxFor(m => m.AppointmentModel.CustomerName, new { @class = "border-0 p-0 font-14 text-dark form-control", id = "customername", type = "text", placeholder = "Uw voornaam" })
                     @Html.ValidationMessageFor(model => model.AppointmentModel.CustomerName, "", new { @class = "text-danger" })
                 </div>
                 <div class="p-4 right w-50">
                     <label class="text-inverse font-12 text-uppercase">Achternaam*</label>
-                    @Html.TextBoxFor(m => m.AppointmentModel.CustomerLastName, new { @class = "border-0 p-0 font-14 form-control", id = "customerlastname", type = "text", placeholder = "Uw achternaam" })
+                    @Html.TextBoxFor(m => m.AppointmentModel.CustomerLastName, new { @class = "border-0 p-0 font-14 text-dark form-control", id = "customerlastname", type = "text", placeholder = "Uw achternaam" })
                     @Html.ValidationMessageFor(model => model.AppointmentModel.CustomerLastName, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-row border-bottom p-4">
                 <label class="text-inverse font-12 text-uppercase">E-mail*</label>
-                @Html.TextBoxFor(m => m.AppointmentModel.Email, new { @class = "border-0 p-0 font-14 form-control", id = "email", type = "text", placeholder = "Uw e-mailadres" })
+                @Html.TextBoxFor(m => m.AppointmentModel.Email, new { @class = "border-0 p-0 font-14 text-dark form-control", id = "email", type = "text", placeholder = "Uw e-mailadres" })
                 @Html.ValidationMessageFor(model => model.AppointmentModel.Email, "", new { @class = "text-danger" })
             </div>
             <div class="form-row border-bottom p-4">
                 <label class="text-inverse font-12 text-uppercase">Mobiele nummer*</label>
-                @Html.TextBoxFor(m => m.AppointmentModel.MobileNumber, new { @class = "border-0 p-0 font-14 form-control", id = "mobilenumber", type = "text", placeholder = "Uw mobiele nr." })
+                @Html.TextBoxFor(m => m.AppointmentModel.MobileNumber, new { @class = "border-0 p-0 font-14 text-dark form-control", id = "mobilenumber", type = "text", placeholder = "Uw mobiele nr." })
                 @Html.ValidationMessageFor(model => model.AppointmentModel.MobileNumber, "", new { @class = "text-danger" })
             </div>
             <div class="form-row border-bottom p-4 position-relative">
-                <label class="text-inverse font-12 text-uppercase">Datum afpraak*</label>
+                <label class="text-inverse font-12 text-uppercase">Datum afspraak*</label>
                 <div class="input-group date">
                     @Html.EditorFor(m => m.AppointmentModel.AppointmentDate, new
                {
-                   htmlAttributes = new { @class = "border-0 p-0 font-14 form-control", type = "text", id = "appointmentdate" }
+                   htmlAttributes = new { @class = "border-0 p-0 font-14 text-dark form-control", @style = "text-align: left; width: 50%", type = "text", id = "appointmentdate" }
                })
                     @Html.ValidationMessageFor(model => model.AppointmentModel.AppointmentDate, "", new { @class = "text-danger" })
-                    @Html.DropDownListFor(m => m.ChosenAppointmentTime, new SelectList(Model.DateTimeModel.OpeningTimes, "Value", "Text"), new { @style = "margin-left: 10px;", @id = "appointmenttime" })
+                </div>
+            </div>
+            <div class="form-row border-bottom p-4 position-relative">
+                <label class="text-inverse font-12 text-uppercase">Tijdstip afspraak*</label>
+                <div class="input-group date">
+                    @Html.DropDownListFor(m => m.ChosenAppointmentTime, new SelectList(Model.DateTimeModel.Times, "Value", "Text"), new { @class = "border-0 p-0 font-14 text-dark form-control", @style = "text-align: center; width: 65px", @id = "appointmenttime" })
                 </div>
             </div>
             <div class="form-row border-bottom p-4">
                 <label class="text-inverse font-12 text-uppercase">Bericht</label>
-                @Html.TextAreaFor(m => m.AppointmentModel.Message, new { @class = "border-0 p-0 font-weight-light font-14 form-control", id = "message", @style = "max-height: 100px;", placeholder = "Typ hier uw bericht", col = "1", row = "1" })
+                @Html.TextAreaFor(m => m.AppointmentModel.Message, new { @class = "border-0 p-0 font-14 text-dark form-control", id = "message", @style = "max-height: 100px;", placeholder = "Typ hier uw bericht", col = "1", row = "1" })
             </div>
             <div class="row d-flex justify-content-center mobile-appointment-card-button">
                 <div class="mb-md-2">
@@ -72,9 +77,22 @@
     var dateChange = false;
     $("#appointmentdate").datepicker({ minDate: 0, dateFormat: "yy/mm/dd" }).datepicker("setDate", new Date());
 
+    //Set form field values to chosen values after date has been changed
+    /*if (sessionStorage.getItem("dateChange")) {
+        $('#customername').val(sessionStorage.getItem("customerName"));
+        $('#customerlastname').val(sessionStorage.getItem("customerLastName"));
+        $('#email').val(sessionStorage.getItem("email"));
+        $('#mobilenumber').val(sessionStorage.getItem("mobileNumber"));
+        $('#message').val(sessionStorage.getItem("message"));
+        $("#appointmentdate").datepicker({ minDate: 0, dateFormat: "yy/mm/dd" }).datepicker("setDate", sessionStorage.getItem("date"));
+    }*/
+
+    //On date change send date to server side and server side takes care of Dropdownlist of times to remove reserved timeslots.
     $('#appointmentdate').change(function () {
-        dateChange = true;
+
         var selectedDate = $("#appointmentdate").val();
+
+        /*dateChange = true;
         var customerName = $("#customername").val();
         var customerLastName = $("#customerlastname").val();
         var email = $("#email").val();
@@ -87,7 +105,7 @@
         sessionStorage.setItem("customerLastName", customerLastName);
         sessionStorage.setItem("email", email);
         sessionStorage.setItem("mobileNumber", mobileNumber);
-        sessionStorage.setItem("message", message);
+        sessionStorage.setItem("message", message);*/
 
         $.ajax({
             url: "/Appointment/SetSelectedDate",
@@ -98,23 +116,9 @@
                 console.log(data);
             },
             error: function (passParams) {
-                console.log("ERROR");
+                console.log(passParams);
             }
         });
-        location.reload();
+        //location.reload();
     });
-
-    if (sessionStorage.getItem("dateChange")) {
-        $('#customername').val(sessionStorage.getItem("customerName"));
-        $('#customerlastname').val(sessionStorage.getItem("customerLastName"));
-        $('#email').val(sessionStorage.getItem("email"));
-        $('#mobilenumber').val(sessionStorage.getItem("mobileNumber"));
-        $('#message').val(sessionStorage.getItem("message"));
-        $("#appointmentdate").datepicker({ minDate: 0, dateFormat: "yy/mm/dd" }).datepicker("setDate", sessionStorage.getItem("date"));
-    }
-
-    $('#submit-button').click(function () {
-        sessionStorage.clear();
-    })
-
 </script>

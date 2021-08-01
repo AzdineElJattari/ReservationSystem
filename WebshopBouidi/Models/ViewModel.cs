@@ -2,9 +2,8 @@
 {
     public class ViewModel
     {
-
-        public AppointmentModel AppointmentModel { get; } = new AppointmentModel();
-        public DateTimeModel DateTimeModel { get; } = new DateTimeModel();
+        public AppointmentModel AppointmentModel { get; set; } = new AppointmentModel();
+        public DateTimeModel DateTimeModel { get; set; } = new DateTimeModel();
         public string ChosenAppointmentTime { get; set; }
     }
 }
