@@ -14,58 +14,64 @@
     <div class="">
         @using (Html.BeginForm("Create", "Appointment", FormMethod.Post, new { @class = "bg-white rounded" }))
         {
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-row border-bottom">
-                <div class="p-4 left border-right w-50">
-                    <label class="text-inverse font-12 text-uppercase">Voornaam*</label>
-                    @Html.TextBoxFor(m => m.AppointmentModel.CustomerName, new { @class = "border-0 p-0 font-14 text-dark form-control", id = "customername", type = "text", placeholder = "Uw voornaam" })
-                    @Html.ValidationMessageFor(model => model.AppointmentModel.CustomerName, "", new { @class = "text-danger" })
-                </div>
-                <div class="p-4 right w-50">
-                    <label class="text-inverse font-12 text-uppercase">Achternaam*</label>
-                    @Html.TextBoxFor(m => m.AppointmentModel.CustomerLastName, new { @class = "border-0 p-0 font-14 text-dark form-control", id = "customerlastname", type = "text", placeholder = "Uw achternaam" })
-                    @Html.ValidationMessageFor(model => model.AppointmentModel.CustomerLastName, "", new { @class = "text-danger" })
-                </div>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-row border-bottom">
+            <div class="p-4 left border-right w-50">
+                <label class="text-inverse font-12 text-uppercase">Voornaam*</label>
+                @Html.TextBoxFor(m => m.AppointmentModel.CustomerName, new { @class = "border-0 p-0 font-14 text-dark form-control", id = "customername", type = "text", placeholder = "Uw voornaam" })
+                @Html.ValidationMessageFor(model => model.AppointmentModel.CustomerName, "", new { @class = "text-danger" })
             </div>
-            <div class="form-row border-bottom p-4">
-                <label class="text-inverse font-12 text-uppercase">E-mail*</label>
-                @Html.TextBoxFor(m => m.AppointmentModel.Email, new { @class = "border-0 p-0 font-14 text-dark form-control", id = "email", type = "text", placeholder = "Uw e-mailadres" })
-                @Html.ValidationMessageFor(model => model.AppointmentModel.Email, "", new { @class = "text-danger" })
+            <div class="p-4 right w-50">
+                <label class="text-inverse font-12 text-uppercase">Achternaam*</label>
+                @Html.TextBoxFor(m => m.AppointmentModel.CustomerLastName, new { @class = "border-0 p-0 font-14 text-dark form-control", id = "customerlastname", type = "text", placeholder = "Uw achternaam" })
+                @Html.ValidationMessageFor(model => model.AppointmentModel.CustomerLastName, "", new { @class = "text-danger" })
             </div>
-            <div class="form-row border-bottom p-4">
-                <label class="text-inverse font-12 text-uppercase">Mobiele nummer*</label>
-                @Html.TextBoxFor(m => m.AppointmentModel.MobileNumber, new { @class = "border-0 p-0 font-14 text-dark form-control", id = "mobilenumber", type = "text", placeholder = "Uw mobiele nr." })
-                @Html.ValidationMessageFor(model => model.AppointmentModel.MobileNumber, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-row border-bottom p-4">
+            <label class="text-inverse font-12 text-uppercase">E-mail*</label>
+            @Html.TextBoxFor(m => m.AppointmentModel.Email, new { @class = "border-0 p-0 font-14 text-dark form-control", id = "email", type = "text", placeholder = "Uw e-mailadres" })
+            @Html.ValidationMessageFor(model => model.AppointmentModel.Email, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-row border-bottom p-4">
+            <label class="text-inverse font-12 text-uppercase">Mobiele nummer*</label>
+            @Html.TextBoxFor(m => m.AppointmentModel.MobileNumber, new { @class = "border-0 p-0 font-14 text-dark form-control", id = "mobilenumber", type = "text", placeholder = "Uw mobiele nr." })
+            @Html.ValidationMessageFor(model => model.AppointmentModel.MobileNumber, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-row border-bottom p-4 position-relative">
+            <label class="text-inverse font-12 text-uppercase">Datum afspraak*</label>
+            <div class="input-group date">
+                @Html.EditorFor(m => m.AppointmentModel.AppointmentDate, new
+                {
+                htmlAttributes = new { @class = "border-0 p-0 font-14 text-dark form-control", @style = "text-align: left; width: 50%", type = "text", id = "appointmentdate" }
+                })
+                @Html.ValidationMessageFor(model => model.AppointmentModel.AppointmentDate, "", new { @class = "text-danger" })
             </div>
-            <div class="form-row border-bottom p-4 position-relative">
-                <label class="text-inverse font-12 text-uppercase">Datum afspraak*</label>
-                <div class="input-group date">
-                    @Html.EditorFor(m => m.AppointmentModel.AppointmentDate, new
-               {
-                   htmlAttributes = new { @class = "border-0 p-0 font-14 text-dark form-control", @style = "text-align: left; width: 50%", type = "text", id = "appointmentdate" }
-               })
-                    @Html.ValidationMessageFor(model => model.AppointmentModel.AppointmentDate, "", new { @class = "text-danger" })
-                </div>
+        </div>
+        <div class="form-row border-bottom p-4 position-relative">
+            <label class="text-inverse font-12 text-uppercase">Datum afspraak*</label>
+            <div class="input-group date">
+                <input type="text" id="datetime" readonly>
             </div>
-            <div class="form-row border-bottom p-4 position-relative">
-                <label class="text-inverse font-12 text-uppercase">Tijdstip afspraak*</label>
-                <div class="input-group date">
-                    @Html.DropDownListFor(m => m.ChosenAppointmentTime, new SelectList(Model.DateTimeModel.Times, "Value", "Text"), new { @class = "border-0 p-0 font-14 text-dark form-control", @style = "text-align: center; width: 65px", @id = "appointmenttime" })
-                </div>
+        </div>
+        <div class="form-row border-bottom p-4 position-relative">
+            <label class="text-inverse font-12 text-uppercase">Tijdstip afspraak*</label>
+            <div class="input-group date">
+                @Html.DropDownListFor(m => m.ChosenAppointmentTime, new SelectList(Model.DateTimeModel.Times, "Value", "Text"), new { @class = "border-0 p-0 font-14 text-dark form-control", @style = "text-align: center; width: 65px", @id = "appointmenttime" })
             </div>
-            <div class="form-row border-bottom p-4">
-                <label class="text-inverse font-12 text-uppercase">Bericht</label>
-                @Html.TextAreaFor(m => m.AppointmentModel.Message, new { @class = "border-0 p-0 font-14 text-dark form-control", id = "message", @style = "max-height: 100px;", placeholder = "Typ hier uw bericht", col = "1", row = "1" })
+        </div>
+        <div class="form-row border-bottom p-4">
+            <label class="text-inverse font-12 text-uppercase">Bericht</label>
+            @Html.TextAreaFor(m => m.AppointmentModel.Message, new { @class = "border-0 p-0 font-14 text-dark form-control", id = "message", @style = "max-height: 100px;", placeholder = "Typ hier uw bericht", col = "1", row = "1" })
+        </div>
+        <div class="row d-flex justify-content-center mobile-appointment-card-button">
+            <div class="mb-md-2">
+                <button type="submit" class="btn btn-warning w-100" id="submit-button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-check ml-md-1"></i> Maak afspraak</button>
+                <button class="btn btn-warning w-100" id="resultLoading" type="submit" disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Loading...
+                </button>
             </div>
-            <div class="row d-flex justify-content-center mobile-appointment-card-button">
-                <div class="mb-md-2">
-                    <button type="submit" class="btn btn-warning w-100" id="submit-button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-check ml-md-1"></i> Maak afspraak</button>
-                    <button class="btn btn-warning w-100" id="resultLoading" type="submit" disabled>
-                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                        Loading...
-                    </button>
-                </div>
-            </div>
+        </div>
         }
     </div>
 </div>
@@ -119,6 +125,5 @@
                 console.log(passParams);
             }
         });
-        //location.reload();
     });
 </script>
