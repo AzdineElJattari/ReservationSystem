@@ -21,8 +21,6 @@ namespace WebshopBouidi.Controllers
 
         public async Task<ActionResult> Index()
         {
-            _ = VM;
-            _ = SelectedDate;
             using (var dbContext = new ProjectContext())
             {
                 await Task.Run(() => ListOfAppointmentDates = AppointmentBAL.GetAppointments().Select(x => x.AppointmentDate).ToList());
@@ -59,8 +57,6 @@ namespace WebshopBouidi.Controllers
             {
                 VM.DateTimeModel.FindTimesAndRemove(ListOfAppointmentDates, formattedDate);
             }
-            _ = VM;
-            _ = SelectedDate;
             ModelState.Clear();
 
             return RedirectToAction("Index", "Appointment");
@@ -83,7 +79,6 @@ namespace WebshopBouidi.Controllers
 
             //Concatenate chosen appointment date & time together
             string finalDate = $"{appointment.AppointmentModel.AppointmentDate} - {time}";
-            _ = ModelState.IsValid;
             try
             {
                 if (ModelState.IsValid)
