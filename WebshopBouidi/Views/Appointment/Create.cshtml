@@ -48,12 +48,6 @@
             </div>
         </div>
         <div class="form-row border-bottom p-4 position-relative">
-            <label class="text-inverse font-12 text-uppercase">Datum afspraak*</label>
-            <div class="input-group date">
-                <input type="text" id="datetime" readonly>
-            </div>
-        </div>
-        <div class="form-row border-bottom p-4 position-relative">
             <label class="text-inverse font-12 text-uppercase">Tijdstip afspraak*</label>
             <div class="input-group date">
                 @Html.DropDownListFor(m => m.ChosenAppointmentTime, new SelectList(Model.DateTimeModel.Times, "Value", "Text"), new { @class = "border-0 p-0 font-14 text-dark form-control", @style = "text-align: center; width: 65px", @id = "appointmenttime" })
